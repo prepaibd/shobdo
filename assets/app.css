@@ -1,0 +1,260 @@
+/* VOICE: a friendly bilingual study app for Bangladeshi students — clear, encouraging, exam-focused.
+   IDEA: a vocabulary workbook: printed quiz sheets, blue pen, yellow highlighter, green Bangla notes.
+   PICTURE: on each page the working thing itself — word of the day card, lesson list, quiz sheet, flashcard.
+   COLOUR and TYPE: white paper / night ink, pen blue, highlighter yellow, Bangla green; Jost + Literata + Hind Siliguri.
+   LAYOUT: sticky top bar, one 1040px column, auto-fill card grids, everything stacks on phones. */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#10131c);--ink:light-dark(#15171c,#eceef4);--mute:light-dark(#5b6070,#a2a8b8);--line:light-dark(#dfe2ea,#2a3040);--card:light-dark(#f5f7fb,#181c28);--pen:light-dark(#1f46c8,#8aa6ff);--bn:light-dark(#0b6e4f,#6fd6ae);--hi:light-dark(#ffe14d,#6b5a00);--ok:light-dark(#0f7a3d,#5fd38f);--bad:light-dark(#c42b1c,#ff8a7a)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Literata,"Hind Siliguri",Georgia,serif;overflow-x:clip}
+h1,h2,h3,button,select,input,.top a,.tab,.chip,.btn{font-family:Jost,"Hind Siliguri","Century Gothic",system-ui,sans-serif}
+.bn{font-family:"Hind Siliguri","Noto Sans Bengali",sans-serif;color:var(--bn);line-height:1.65}
+a{color:var(--pen)}
+h1{font-size:clamp(32px,6vw,50px);line-height:1.1;margin:0 0 10px;font-weight:800;text-wrap:balance}
+h2{font-size:clamp(24px,3.6vw,32px);line-height:1.15;margin:0 0 6px;font-weight:700;text-wrap:balance}
+h1 .bn,h2 .bn{display:block;font-size:.6em;font-weight:600;margin-top:4px}
+h3{font-size:20px;margin:0;font-weight:700;line-height:1.25}
+mark{background:linear-gradient(transparent 55%,var(--hi) 55%);color:inherit;padding:0 2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 max(4vw,16px)}
+.band{padding:clamp(24px,4vw,48px) 0}
+.band+.band{border-top:1px solid var(--line)}
+.lead{color:var(--mute);max-width:66ch;margin:0}
+.lead.bn{color:var(--bn);margin-top:2px}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:2px solid var(--ink)}
+.top .wrap{display:flex;align-items:center;gap:8px 16px;flex-wrap:wrap;min-height:64px;padding-block:8px}
+.brand{display:flex;align-items:baseline;gap:8px;text-decoration:none;color:var(--ink);margin-right:auto}
+.brand b{font:800 26px Jost,sans-serif}.brand span{font:700 22px "Hind Siliguri",sans-serif;color:var(--bn)}
+.top nav{display:flex;gap:4px;flex-wrap:wrap}
+.top nav a{color:var(--ink);text-decoration:none;font-weight:500;font-size:15px;padding:10px 12px;border-radius:10px;display:flex;align-items:center;gap:6px;min-height:44px}
+.top nav a:hover{background:var(--card)}
+.top nav a.on{background:var(--ink);color:var(--bg)}
+.badge{background:var(--hi);color:#15171c;border-radius:999px;font-size:12px;font-weight:700;padding:0 7px;min-width:20px;text-align:center}
+.badge:empty{display:none}
+
+/* home */
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:center}
+@media(max-width:760px){.hero{grid-template-columns:1fr}}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:22px}
+.stat{border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.stat b{display:block;font:800 clamp(24px,4vw,32px)/1.1 Jost,sans-serif}
+.stat span{font-size:14px;color:var(--mute);font-family:"Hind Siliguri",sans-serif}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:16px;font-weight:500;min-height:44px;padding:0 18px;border-radius:10px;border:2px solid var(--ink);background:var(--bg);color:var(--ink);cursor:pointer;text-decoration:none}
+.btn.pri{background:var(--pen);border-color:var(--pen);color:#fff}
+.steps4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:12px;margin-top:18px;counter-reset:s}
+.steps4 div{border-top:3px solid var(--pen);padding-top:10px}
+.steps4 div::before{counter-increment:s;content:counter(s);font:800 28px Jost,sans-serif;color:var(--pen);display:block}
+.steps4 p{margin:2px 0;font-size:15px}
+
+/* sources + lessons */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:14px;margin-top:20px}
+.src{display:flex;flex-direction:column;gap:6px;border:2px solid var(--ink);border-radius:14px;padding:18px;text-decoration:none;color:var(--ink);background:var(--bg);box-shadow:6px 6px 0 var(--c,var(--pen));transition:transform .15s}
+a.src:hover{transform:translate(-2px,-2px)}
+.src.soon{border-style:dashed;box-shadow:none;color:var(--mute)}
+.src p{margin:0;font-size:15px}
+.chip{display:inline-block;font-size:13px;font-weight:500;border:1px solid var(--line);border-radius:999px;padding:2px 10px;color:var(--mute);width:fit-content}
+.chip.done{background:var(--ok);border-color:var(--ok);color:#fff}
+.chip.go{border-color:var(--pen);color:var(--pen)}
+.bar{height:8px;border-radius:99px;background:var(--line);overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;background:var(--pen);border-radius:99px}
+.lessons{display:grid;gap:10px;margin-top:20px}
+.lrow{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:14px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:14px 16px;text-decoration:none;color:var(--ink)}
+.lrow:hover{border-color:var(--pen)}
+.lrow .n{font:800 28px Jost,sans-serif;color:var(--pen);text-align:center}
+.lrow .ws{color:var(--mute);font-size:14.5px}
+.lrow .sc{text-align:right;font:500 14px Jost,"Hind Siliguri",sans-serif;color:var(--mute)}
+@media(max-width:600px){.lrow{grid-template-columns:40px minmax(0,1fr)}.lrow .sc{grid-column:2;text-align:left}}
+.crumb{font:500 15px Jost,"Hind Siliguri",sans-serif;color:var(--mute);margin-bottom:8px}
+.crumb a{color:var(--mute)}
+
+/* lesson tabs */
+.tabs{display:flex;gap:6px;overflow-x:auto;margin-top:18px;padding-bottom:2px}
+.tab{flex:none;text-decoration:none;color:var(--ink);border:1.5px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:500;font-size:15px;min-height:44px;display:flex;align-items:center}
+.tab.on{background:var(--pen);border-color:var(--pen);color:#fff}
+.pager{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:28px}
+
+/* word cards */
+.w{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;position:relative}
+.w h3 span{font:500 14px Jost,"Hind Siliguri",sans-serif;color:var(--mute);margin-left:6px}
+.w .def{font-family:Jost,sans-serif;font-weight:700;color:var(--pen);font-size:18px;margin:4px 0 0}
+.w .bnm{font:700 20px "Hind Siliguri",sans-serif;color:var(--bn);margin:0 0 8px}
+.w p{margin:6px 0;font-size:15.5px}.w p.bn{margin-top:0}
+.w .ex{font-style:italic;margin-bottom:0}
+.tag{display:inline-block;font:500 13px Jost,"Hind Siliguri",sans-serif;color:var(--mute);border:1px solid var(--line);border-radius:6px;padding:1px 8px;margin-top:8px}
+.star{position:absolute;top:10px;right:10px;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:var(--bg);font-size:20px;line-height:1;cursor:pointer;color:var(--mute);padding:0}
+.star[aria-pressed=true]{background:var(--hi);border-color:var(--hi);color:#15171c}
+.w h3{padding-right:48px}
+/* lesson note: one line, opens on demand */
+.note{margin:18px 0 4px;border:2px solid var(--ink);border-radius:14px;background:var(--bg)}
+.note summary{display:flex;align-items:center;gap:12px;padding:12px 16px;min-height:52px;cursor:pointer;list-style:none;font:500 17px/1.35 Jost,"Hind Siliguri",sans-serif}
+.note summary::-webkit-details-marker{display:none}
+.note summary .ttl{flex:1}
+.note summary .more{flex:none;font-size:14px;color:var(--pen);font-weight:600;white-space:nowrap}
+.note summary .more::after{content:attr(data-more)}
+.note[open] summary .more::after{content:attr(data-less)}
+.note[open] summary{border-bottom:1px solid var(--line)}
+.nbody{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;align-items:start;padding:16px 20px 20px}
+@media(max-width:700px){.nbody{grid-template-columns:1fr;padding:14px 16px 16px}}
+.eq{display:grid;gap:8px}
+.eq div{padding:8px 12px;border-left:4px solid var(--pen);background:var(--card);border-radius:0 10px 10px 0;font-size:15px}
+.eq b{font-family:Jost,sans-serif;font-size:17px}.eq .bn{display:block;font-size:14.5px}
+.note p{margin:0 0 6px;font-size:15.5px}
+.note + .grid{margin-top:16px}
+
+/* flashcards */
+.flipzone{display:grid;justify-items:center;gap:14px;margin-top:18px}
+.card{width:min(100%,560px);height:300px;perspective:1200px;cursor:pointer;border:0;background:none;padding:0;color:var(--ink)}
+.card.sm{height:270px}
+.inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.card.on .inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:18px;display:grid;place-content:center;text-align:center;padding:22px;border:2px solid var(--ink);background:var(--bg);box-shadow:8px 8px 0 var(--pen)}
+.face.back{transform:rotateY(180deg);background:var(--card)}
+.face .big{font:800 clamp(36px,8vw,54px)/1 Jost,sans-serif}
+.face .pos{color:var(--mute);font:500 15px Jost,"Hind Siliguri",sans-serif;margin-top:8px}
+.face .hint{color:var(--mute);font-size:14px;margin-top:14px;font-family:Jost,"Hind Siliguri",sans-serif}
+.face .d{font:700 24px/1.2 Jost,sans-serif;color:var(--pen)}
+.face .db{font:700 25px/1.3 "Hind Siliguri",sans-serif;color:var(--bn);margin-top:4px}
+.face .e{font-style:italic;margin-top:10px;font-size:15px}
+.face .eb{font-size:15px;margin-top:2px}
+.kicker{font:600 15px "Hind Siliguri",sans-serif;color:var(--mute);margin-bottom:8px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center}
+.count{font-family:Jost,sans-serif;color:var(--mute);min-width:70px;text-align:center}
+.streak{font:500 14px "Hind Siliguri",sans-serif;color:var(--mute);text-align:center}
+
+/* exercises */
+button{font-size:16px;font-weight:500;min-height:44px;padding:0 18px;border-radius:10px;border:2px solid var(--ink);background:var(--bg);color:var(--ink);cursor:pointer}
+button.pri{background:var(--pen);border-color:var(--pen);color:#fff}
+button.good{background:var(--ok);border-color:var(--ok);color:#fff}
+button:disabled{opacity:.4;cursor:not-allowed}
+button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible,.card:focus-visible{outline:3px solid var(--hi);outline-offset:3px}
+.sheet{border:2px solid var(--ink);border-radius:6px;padding:clamp(16px,3vw,28px);margin-top:18px}
+.sheet .inst{font-style:italic;margin:0}.sheet .inst.bn{font-style:normal;margin:2px 0 16px}
+.q{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) 28px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px dashed var(--line)}
+.q label{font:500 18px Jost,sans-serif}
+.q .bn{display:none;font-size:14.5px;font-weight:400}
+.showbn .q .bn{display:block}
+.q p{margin:0;font-size:16px}
+.sent .q{grid-template-columns:minmax(0,2fr) minmax(0,1fr) 28px}
+.blank{display:inline-block;min-width:70px;border-bottom:2px solid var(--ink);margin:0 2px}
+select,input{font-size:16px;min-height:44px;width:100%;padding:0 10px;border-radius:8px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink)}
+select:disabled{opacity:1;cursor:not-allowed}
+option:disabled{color:#9aa0ad}
+.mk{font:800 20px Jost,sans-serif;text-align:center}
+.q.ok select{border-color:var(--ok)}.q.ok .mk{color:var(--ok)}
+.q.no select{border-color:var(--bad)}.q.no .mk{color:var(--bad)}
+@media(max-width:600px){.q,.sent .q{grid-template-columns:minmax(0,1fr) 28px}.q select{grid-column:1}.q .mk{grid-row:1/3;grid-column:2}}
+.score{font:700 19px Jost,"Hind Siliguri",sans-serif;text-align:center;margin:16px 0 0;min-height:28px}
+.btns{margin-top:12px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:16px 0 0;display:grid;gap:14px}
+.steps li{padding-left:44px;position:relative}
+.steps li .bn{display:block;font-size:15.5px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--pen);color:#fff;display:grid;place-items:center;font:700 15px Jost,sans-serif}
+.rev{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:6px 20px;margin-top:14px;font-size:15.5px}
+
+/* word bank */
+.filters{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) auto;gap:10px;align-items:center;margin-top:18px}
+@media(max-width:600px){.filters{grid-template-columns:1fr}}
+.check{display:flex;align-items:center;gap:8px;font:500 15px "Hind Siliguri",sans-serif;min-height:44px;cursor:pointer}
+.check input{width:20px;min-height:20px}
+.wlist{margin-top:14px;border-top:1px solid var(--line)}
+.wlist details{border-bottom:1px solid var(--line)}
+.wlist summary{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) minmax(0,1.3fr);gap:12px;padding:12px 4px;cursor:pointer;list-style:none;align-items:baseline}
+.wlist summary::-webkit-details-marker{display:none}
+.wlist summary b{font:700 18px Jost,sans-serif}
+.wlist summary .d{color:var(--pen);font:500 16px Jost,sans-serif}
+@media(max-width:600px){.wlist summary{grid-template-columns:1fr;gap:0}}
+.wlist .body{padding:0 4px 16px}
+.wlist .body .w{background:none;border:0;padding:0}
+.empty{text-align:center;padding:40px 16px;border:2px dashed var(--line);border-radius:14px;margin-top:18px}
+.empty p{margin:6px auto;max-width:52ch}
+footer{color:var(--mute);font-size:14px;text-align:center;padding:28px 16px;border-top:1px solid var(--line)}
+@media(prefers-reduced-motion:reduce){.inner,.src{transition:none}}
+
+/* quiz: meanings panel, like the book's second column */
+.qwrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:24px;align-items:start}
+.qwrap .q{grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) 28px}
+.mpanel{position:sticky;top:84px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);max-height:calc(100vh - 100px);overflow:auto}
+.mpanel summary{list-style:none;cursor:pointer;padding:10px 14px;font:700 16px Jost,"Hind Siliguri",sans-serif;display:flex;justify-content:space-between;gap:8px;align-items:center;min-height:44px}
+.mpanel summary::-webkit-details-marker{display:none}
+.mpanel summary::after{content:"▾";color:var(--mute)}
+.mpanel[open] summary::after{content:"▴"}
+.mpanel ol{list-style:none;margin:0;padding:0 14px 12px;display:grid;gap:2px}
+.mpanel li{display:grid;grid-template-columns:22px minmax(0,1fr) 18px;gap:6px;align-items:baseline;padding:5px 0;border-top:1px dashed var(--line);font:500 15px/1.35 Jost,sans-serif}
+.mpanel li b{color:var(--pen)}
+.mpanel li .bn{display:none;font-size:13.5px;font-weight:400}
+.showbn .mpanel li .bn{display:block}
+.mpanel li .n2{color:var(--mute);font-weight:400}
+.mpanel li .ck{color:var(--ok);font-weight:800;text-align:center}
+.mpanel li.used{color:var(--mute)}.mpanel li.used b{color:var(--mute)}
+.mpanel li.used .df{text-decoration:line-through;text-decoration-color:var(--line)}
+@media(max-width:860px){.qwrap{grid-template-columns:1fr;gap:12px}.mpanel{position:static;max-height:none;order:-1}}
+@media(max-width:600px){.qwrap .q{grid-template-columns:minmax(0,1fr) 28px}}
+
+/* language switch */
+.lang{display:inline-flex;border:1.5px solid var(--ink);border-radius:10px;overflow:hidden;flex:none}
+.lang button{min-height:36px;border:0;border-radius:0;padding:0 12px;font-size:14px;background:var(--bg);color:var(--ink)}
+.lang button+button{border-left:1.5px solid var(--ink)}
+.lang button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.lang button[lang=bn]{font-family:"Hind Siliguri",sans-serif}
+.top .wrap{flex-wrap:nowrap}
+.top nav .ic{display:none}
+.meta{color:var(--mute);font:500 16px Jost,"Hind Siliguri",sans-serif;margin:-2px 0 0}
+.src .by{color:var(--mute);font-size:14px}
+
+/* Bangla interface: Bangla script reads smaller than Latin at the same size */
+html[lang=bn] .lead,html[lang=bn] .streak,html[lang=bn] .chip,html[lang=bn] .tab,html[lang=bn] .top nav a,html[lang=bn] button,html[lang=bn] .btn,html[lang=bn] .meta,html[lang=bn] .crumb,html[lang=bn] .kicker,html[lang=bn] .stat span,html[lang=bn] .steps li,html[lang=bn] .steps4 p,html[lang=bn] .score,html[lang=bn] .face .hint,html[lang=bn] .tag,html[lang=bn] .check{font-family:Jost,"Hind Siliguri",sans-serif}
+html[lang=bn] .lead,html[lang=bn] .steps li{font-size:1.06em;line-height:1.7}
+.bn{font-size:1.04em}
+.lead.bn,.w p.bn,.note p.bn{line-height:1.7}
+
+/* phones: compact header, menu as a bottom bar */
+@media(max-width:640px){
+  .top .wrap{min-height:56px;padding-block:6px}
+  .brand b{font-size:23px}.brand span{font-size:19px}
+  .top nav.mainnav{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:var(--bg);border-top:2px solid var(--ink);padding:4px 6px calc(4px + env(safe-area-inset-bottom))}
+  .top nav.mainnav a{flex-direction:column;gap:0;font-size:13px;padding:6px 4px;min-height:54px;justify-content:center;border-radius:10px;position:relative}
+  .top nav .ic{display:block;font-size:20px;line-height:1.1}
+  .top nav .badge{position:absolute;top:4px;left:calc(50% + 8px)}
+  body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+  .tab{padding:8px 9px;font-size:14px}
+  .tab .tn{display:none}
+  .tabs{gap:4px}
+}
+@media(max-width:640px){html[lang=bn] .top nav.mainnav a{font-size:14.5px}html[lang=bn] .tab{font-size:15px}}
+
+.lrow.nonum{grid-template-columns:minmax(0,1fr) auto}
+@media(max-width:600px){.lrow.nonum{grid-template-columns:minmax(0,1fr)}.lrow.nonum .sc{grid-column:1}}
+.sheet .qq{font-size:22px;letter-spacing:.06em;text-transform:uppercase;text-align:center;margin:0 0 10px}
+.tab .tn{margin-right:.3em}
+
+.lrow h3{display:inline}
+.lrow .bq{display:inline-block;margin-left:10px;font:500 13px Jost,"Hind Siliguri",sans-serif;color:var(--pen);border:1px solid var(--pen);border-radius:6px;padding:0 7px;vertical-align:2px}
+.lrow .ws{display:block}
+
+/* lesson list: how lessons match the book */
+.about{margin-top:22px;padding:20px 22px;border:2px solid var(--ink);border-radius:14px;box-shadow:6px 6px 0 var(--hi)}
+.about h2{font-size:clamp(20px,2.6vw,24px);margin:0 0 14px}
+.map{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:14px;align-items:stretch}
+.map .side{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:14px 16px}
+.map .side.here{border-color:var(--pen)}
+.map .ico{font-size:26px;display:block;line-height:1.2}
+.map b{display:block;font:700 18px Jost,"Hind Siliguri",sans-serif;margin-top:4px}
+.map .here b{color:var(--pen)}
+.map p{margin:4px 0 0;font:500 17px/1.45 Jost,"Hind Siliguri",sans-serif}
+.map .eqs{align-self:center;font:800 32px Jost,sans-serif;color:var(--pen)}
+.about .ex{margin:14px 0 0;font:500 17px/1.5 Jost,"Hind Siliguri",sans-serif}
+html[lang=bn] .map p,html[lang=bn] .about .ex{font-size:18px}
+@media(max-width:600px){.about{padding:16px}.about h2{margin-bottom:10px}.map{gap:8px}.map .side{padding:10px 12px}.map .ico{font-size:22px}.map b{font-size:16px}.map p,html[lang=bn] .map p{font-size:15px}.map .eqs{font-size:24px}.about .ex,html[lang=bn] .about .ex{font-size:15.5px;margin-top:10px}}
+
+/* optional book covers (assets/covers/<id>.jpg) */
+.src{flex-direction:row;align-items:flex-start;gap:14px}
+.src .sbody{display:flex;flex-direction:column;gap:6px;flex:1}
+.cover{flex:none;width:80px;height:110px;object-fit:cover;border-radius:6px;border:1px solid var(--line);box-shadow:2px 3px 0 var(--line);background:var(--card)}
+.src.soon .cover{opacity:.7}
+.shead{display:flex;gap:20px;align-items:center}
+.cover.lg{width:100px;height:140px}
+@media(max-width:600px){.cover.lg{width:76px;height:106px}.shead{gap:14px}}
+footer .fnote{display:block;font-size:12.5px;margin-top:4px;opacity:.85}
