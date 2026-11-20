@@ -37,7 +37,7 @@ const posText = w => isBn() && w.posBn ? `${w.pos} · ${w.posBn}` : (w.pos || ""
 let keyHandler = null;
 document.addEventListener("keydown", e => {
   if (["INPUT","SELECT","TEXTAREA"].includes(e.target.tagName)) return;
-  if (e.target.closest && e.target.closest("[data-say]")) return;       // Space/Enter on 🔊 speaks, it doesn't flip
+  if (e.target.closest && e.target.closest("[data-say]")) return;       // Space on 🔊 speaks, it doesn't flip the card
   if (keyHandler) keyHandler(e);
 });
 
@@ -79,10 +79,11 @@ const pickVoice = () => {
 };
 if (synth) { pickVoice(); synth.addEventListener ? synth.addEventListener("voiceschanged", pickVoice) : (synth.onvoiceschanged = pickVoice); }
 else document.documentElement.classList.add("nospeech");
+// stop whatever is playing (a new tap, a new card, a new page) and clear the blue "speaking" state
+const hush = () => { if (!synth) return; speaking = null; synth.cancel(); document.querySelectorAll(".say.on").forEach(b => b.classList.remove("on")); };
 function speak(text, btn) {
   if (!synth || !text) return;
-  synth.cancel();                                                      // a new tap stops the last word
-  document.querySelectorAll(".say.on").forEach(b => b.classList.remove("on"));
+  hush();
   const u = new SpeechSynthesisUtterance(text);
   u.lang = "en-US"; u.rate = 0.9;
   if (enVoice) u.voice = enVoice;
@@ -92,8 +93,11 @@ function speak(text, btn) {
   u.onend = off; u.onerror = off;
   synth.speak(u);
 }
-const sayBtn = (word, extra = "") => `<button type="button" class="say" ${extra} data-say="${esc(word)}" aria-label="${esc(t("listen"))}" title="${esc(t("listen"))}">🔊</button>`;
-// capture phase, so the flashcard under the button never sees the tap and does not flip
+// drawn speaker (not the emoji: same look on every phone, takes the site's colours); the two waves pulse while speaking
+const SAY_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="spk" d="M4 9.5h3.2L12 5.6v12.8l-4.8-3.9H4z"/><path class="w1" d="M15.4 9.3a3.8 3.8 0 0 1 0 5.4"/><path class="w2" d="M18.2 6.7a7.5 7.5 0 0 1 0 10.6"/></svg>`;
+// icon-only next to a word; big = labelled pill under the flashcard (outside it, so flip and listen never share a tap area)
+const sayBtn = (word, extra = "", big = false) => `<button type="button" class="say${big ? " lg" : ""}" ${extra} data-say="${esc(word)}" aria-label="${esc(t("listen"))}" title="${esc(t("listen"))}">${SAY_ICON}${big ? `<span>${esc(t("listen"))}</span>` : ""}</button>`;
+// capture phase: the tap is handled here and goes no further
 app.addEventListener("click", e => {
   const b = e.target.closest("[data-say]"); if (!b) return;
   e.preventDefault(); e.stopPropagation();
@@ -102,7 +106,7 @@ app.addEventListener("click", e => {
 
 /* ---------- shared pieces ---------- */
 const alsoIn = (w, l) => { const o = lessonsFor(w.id).filter(x => x !== l); return o.length ? `<p class="also">${esc(t("alsoIn"))} ${o.map(x => `<a href="#lesson-${esc(x.id)}">${esc(srcLessonName(x))}</a>`).join(", ")}</p>` : ""; };
-const wordCard = (w, i, l) => `<article class="w">${starBtn(w.id)}<h3>${i != null ? (i + 1) + ". " : ""}${esc(w.word)}${sayBtn(w.word)}<span>${esc(posText(w))}</span></h3>
+const wordCard = (w, i, l) => `<article class="w">${starBtn(w.id)}<h3>${i != null ? (i + 1) + ". " : ""}<span class="hw">${esc(w.word)}${sayBtn(w.word)}</span><span class="pos">${esc(posText(w))}</span></h3>
 <div class="def">${esc(w.def)}</div><div class="bnm">${esc(w.bn)}</div>
 ${w.full ? `<p>${esc(w.full)}</p>` : ""}${w.ex ? `<p class="ex">“${esc(w.ex)}”</p>` : ""}${w.exb ? `<p class="bn">${esc(w.exb)}</p>` : ""}
 ${w.hook ? `<span class="tag">${esc(t("memoryTrick"))}</span><p class="bn">${esc(w.hook)}</p>` : ""}${l ? alsoIn(w, l) : ""}</article>`;
@@ -110,10 +114,11 @@ ${w.hook ? `<span class="tag">${esc(t("memoryTrick"))}</span><p class="bn">${esc
 /* Flashcard deck. mode "study" = next/back/shuffle; mode "review" = I know it / Still learning */
 function deck(ids, mode, kicker, get = W) {
   const html = `<div class="flipzone">${kicker ? `<div class="kicker">${esc(kicker)}</div>` : ""}
-<div class="card" id="fcard" role="button" tabindex="0" aria-label="Flashcard"><div class="inner">
-<div class="face front"><div class="big" id="fw"></div><div class="pos" id="fp"></div><div class="fsay">${sayBtn("", 'id="fsay"')}</div><div class="hint">${esc(t("tapFlip"))}</div></div>
+<button class="card" id="fcard" aria-label="Flashcard"><div class="inner">
+<div class="face front"><div class="big" id="fw"></div><div class="pos" id="fp"></div><div class="hint">${esc(t("tapFlip"))}</div></div>
 <div class="face back"><div class="d" id="fd"></div><div class="db" id="fdb"></div><div class="e" id="fe"></div><div class="eb bn" id="feb"></div></div>
-</div></div>
+</div></button>
+<div class="fsay">${sayBtn("", 'id="fsay"', true)}</div>
 ${mode === "review"
   ? `<div class="row"><button id="fno">${esc(t("notYet"))}</button><span class="count" id="fc"></span><button class="good" id="fyes">${esc(t("know"))}</button></div><div class="streak" id="fs"></div>`
   : `<div class="row"><button id="fprev">${esc(t("prev"))}</button><span class="count" id="fc"></span><button id="fnext">${esc(t("next"))}</button><button id="fshuf">${esc(t("shuffle"))}</button></div><div class="row" id="fstar"></div>`}
@@ -124,7 +129,7 @@ ${mode === "review"
       if (!list.length) { onEmpty && onEmpty(); return; }
       i = (i + list.length) % list.length;
       const w = get(list[i]);
-      $("fcard").classList.remove("on");
+      $("fcard").classList.remove("on"); hush();
       $("fw").textContent = w.word; $("fp").textContent = posText(w); $("fsay").dataset.say = w.word;
       $("fd").textContent = w.def; $("fdb").textContent = w.bn; $("fe").textContent = w.ex || ""; $("feb").textContent = w.exb || "";
       $("fc").textContent = `${N(i + 1)} / ${N(list.length)}`;
@@ -132,8 +137,6 @@ ${mode === "review"
       else $("fstar").innerHTML = `${starBtn(w.id, 'style="position:static"')}<span class="streak">${esc(t("starHint"))}</span>`;
     };
     $("fcard").addEventListener("click", () => $("fcard").classList.toggle("on"));
-    // the card is a div (so it can hold the 🔊 button): Enter flips it like a button; Space is the page key below
-    $("fcard").addEventListener("keydown", e => { if (e.key === "Enter" && e.target === $("fcard")) { e.preventDefault(); $("fcard").click(); } });
     if (mode === "review") {
       const mark = ok => { const id = list[i], still = S.reviewMark(id, ok); if (!still) list.splice(i, 1); else i++; updateBadge(); show(); };
       $("fyes").addEventListener("click", () => mark(true));
@@ -390,7 +393,7 @@ const notFound = () => ({ title: "Not found", html: `<section class="band"><div 
 /* ---------- router (plain #names so links can be shared) ---------- */
 let lastLessonId = null;
 function route(keepScroll) {
-  keyHandler = null;
+  keyHandler = null; hush();
   const h = decodeURIComponent(location.hash.slice(1)) || "home";
   let p, nav = "", lessonId = null;
   if (h === "home") { p = pageHome(); nav = "home"; }
