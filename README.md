@@ -14,6 +14,7 @@ Plain HTML, CSS and JavaScript. No build step, no server code. Open `index.html`
 | `assets/i18n.js` | All interface text in English and Bangla (the EN / বাংলা switch). Bangla is the default. |
 | `assets/app.js` | Pages and routing (`#home`, `#words`, `#review`, `#src-<id>`, `#lesson-<id>-<tab>`). |
 | `assets/app.css` | Styles. |
+| `assets/favicon.svg`, `favicon.ico`, `assets/apple-touch-icon.png` | Browser tab and home-screen icon: the letter শ (Hind Siliguri Bold, as outlines) on the brand green. |
 | `assets/covers/` | Optional book cover images, see `assets/covers/README.txt`. |
 | `data/sources.js` | The books (Word Smart, Barron's 333, …). |
 | `data/wordsmart/quick-quiz-NN.js` | One file per lesson: its words, lesson note, quiz and sentences. |
