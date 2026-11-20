@@ -87,11 +87,17 @@ function checkRefs(where, text, strict) {
 }
 
 /* Barron's quiz/def rule: the full Barron's meaning, or a run of its ";"-separated clauses
-   (first clause when the meaning is long, or a distinguishing clause). */
+   (first clause when the meaning is long, or a distinguishing clause). A clause longer than
+   60 characters may also be cut at a comma, keeping at least three words. */
 function fitsMeaning(def, meaning) {
   const d = norm(def), cl = meaning.split(";").map(norm).filter(Boolean);
   if (d === norm(meaning)) return true;
-  for (let i = 0; i < cl.length; i++) for (let j = i + 1; j <= cl.length; j++) if (cl.slice(i, j).join("; ") === d) return true;
+  for (let i = 0; i < cl.length; i++) for (let j = i + 1; j <= cl.length; j++) {
+    const run = cl.slice(i, j).join("; ");
+    if (run === d) return true;
+    // a long single clause may be cut at a comma: "trying to please by behaving obsequiously, flattering, …"
+    if (run.length > 60 && d.split(" ").length >= 3 && run.startsWith(d + ",")) return true;
+  }
   return false;
 }
 
