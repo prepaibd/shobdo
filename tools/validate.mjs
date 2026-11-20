@@ -14,7 +14,7 @@ const err = (where, msg) => errors.push(`${where}: ${msg}`);
 
 /* ---------- load the data the way index.html does ---------- */
 const html = read("index.html");
-const scripts = [...html.matchAll(/<script\s+src="([^"]+)"/g)].map(m => m[1]);
+const scripts = [...html.matchAll(/<script\s+src="([^"]+)"/g)].map(m => m[1].split("?")[0]);   // ignore the ?v= cache version
 const dataScripts = scripts.filter(s => s === "assets/registry.js" || s.startsWith("data/"));
 const ctx = { window: {} };
 ctx.window = ctx;

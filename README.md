@@ -47,4 +47,10 @@ git pull                                           # updates
 
 Point the web server at the folder that contains `index.html`.
 
+Every local file link in `index.html` ends in `?v=N` (e.g. `assets/app.js?v=2`). Raise the number on all of them with every release, or returning visitors keep their browser's old copy after a `git pull`:
+
+```
+sed -i '' 's/?v=2"/?v=3"/g' index.html    # macOS; on Linux drop the ''
+```
+
 Not affiliated with or endorsed by The Princeton Review or Barron's.
