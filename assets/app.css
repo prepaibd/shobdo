@@ -258,3 +258,15 @@ html[lang=bn] .map p,html[lang=bn] .about .ex{font-size:18px}
 .cover.lg{width:100px;height:140px}
 @media(max-width:600px){.cover.lg{width:76px;height:106px}.shead{gap:14px}}
 footer .fnote{display:block;font-size:12.5px;margin-top:4px;opacity:.85}
+
+/* alphabetical sources (Barron's 333): A–Z jump bar and letter headings */
+.jump{display:flex;gap:6px;overflow-x:auto;margin-top:20px;padding:2px 2px 6px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.jump button{flex:0 0 auto;min-width:44px;min-height:40px;font:700 16px Jost,sans-serif;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:6px 10px;cursor:pointer}
+.jump button:hover{border-color:var(--pen);color:var(--pen)}
+.lhead{font:800 24px Jost,sans-serif;color:var(--pen);margin:26px 0 0;scroll-margin-top:84px}
+.lhead + .lessons{margin-top:10px}
+.about .ex + .ex{margin-top:6px}
+/* word card: other lessons with the same word; word bank: each book's meaning */
+.w .also{margin:10px 0 0;font:500 14.5px/1.5 Jost,"Hind Siliguri",sans-serif;color:var(--mute)}
+.bysrc{margin-top:10px;padding:10px 14px;border-left:3px solid var(--pen);background:var(--card);border-radius:8px}
+.bysrc p{margin:4px 0 0}

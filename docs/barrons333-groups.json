@@ -1,0 +1,2581 @@
+{
+ "source": "Barron's GRE High-Frequency 333 Words (list supplied by the site owner)",
+ "note": "332 distinct words; \"strut\" appears twice in the PDF (two senses) and is merged into one entry. barronsMeaning is the PDF wording with page numbers removed; posHint comes from v./adj. markers in the PDF. alsoInWordSmart lists Word Smart lesson numbers where the same word id already exists.",
+ "groups": [
+  {
+   "id": "b333-a-1",
+   "letters": "A",
+   "part": 1,
+   "parts": 3,
+   "title": "A · Part 1",
+   "titleBn": "A · পর্ব ১",
+   "words": [
+    {
+     "word": "abate",
+     "barronsMeaning": "subside, or moderate",
+     "alsoInWordSmart": {
+      "id": "abate",
+      "lessons": [
+       1
+      ]
+     }
+    },
+    {
+     "word": "aberrant",
+     "barronsMeaning": "abnormal, or deviant"
+    },
+    {
+     "word": "abeyance",
+     "barronsMeaning": "suspended action"
+    },
+    {
+     "word": "abscond",
+     "barronsMeaning": "depart secretly and hide"
+    },
+    {
+     "word": "abstemious",
+     "barronsMeaning": "sparing in eating and drinking; temperate"
+    },
+    {
+     "word": "admonish",
+     "barronsMeaning": "warn; reprove",
+     "alsoInWordSmart": {
+      "id": "admonish",
+      "lessons": [
+       3
+      ]
+     }
+    },
+    {
+     "word": "adulterate",
+     "barronsMeaning": "make impure by adding inferior or tainted substances",
+     "alsoInWordSmart": {
+      "id": "adulterate",
+      "lessons": [
+       4
+      ]
+     }
+    },
+    {
+     "word": "aesthetic",
+     "barronsMeaning": "artistic; dealing with or capable of appreciating the beautiful",
+     "alsoInWordSmart": {
+      "id": "aesthetic",
+      "lessons": [
+       4
+      ]
+     }
+    },
+    {
+     "word": "aggregate",
+     "barronsMeaning": "gather; accumulate",
+     "alsoInWordSmart": {
+      "id": "aggregate",
+      "lessons": [
+       5
+      ]
+     }
+    },
+    {
+     "word": "alacrity",
+     "barronsMeaning": "cheerful promptness; eagerness",
+     "alsoInWordSmart": {
+      "id": "alacrity",
+      "lessons": [
+       5
+      ]
+     }
+    },
+    {
+     "word": "alleviate",
+     "barronsMeaning": "relieve",
+     "alsoInWordSmart": {
+      "id": "alleviate",
+      "lessons": [
+       5
+      ]
+     }
+    },
+    {
+     "word": "amalgamate",
+     "barronsMeaning": "combine; unite in one body"
+    }
+   ]
+  },
+  {
+   "id": "b333-a-2",
+   "letters": "A",
+   "part": 2,
+   "parts": 3,
+   "title": "A · Part 2",
+   "titleBn": "A · পর্ব ২",
+   "words": [
+    {
+     "word": "ambiguous",
+     "barronsMeaning": "unclear or doubtful in meaning",
+     "alsoInWordSmart": {
+      "id": "ambiguous",
+      "lessons": [
+       6
+      ]
+     }
+    },
+    {
+     "word": "ambivalence",
+     "barronsMeaning": "the state of having contradictory or conflicting emotional attitudes"
+    },
+    {
+     "word": "ameliorate",
+     "barronsMeaning": "improve",
+     "alsoInWordSmart": {
+      "id": "ameliorate",
+      "lessons": [
+       7
+      ]
+     }
+    },
+    {
+     "word": "anachronism",
+     "barronsMeaning": "something or someone misplaced in time",
+     "alsoInWordSmart": {
+      "id": "anachronism",
+      "lessons": [
+       7
+      ]
+     }
+    },
+    {
+     "word": "analogous",
+     "barronsMeaning": "comparable"
+    },
+    {
+     "word": "anarchy",
+     "barronsMeaning": "absence of governing body; state of disorder",
+     "alsoInWordSmart": {
+      "id": "anarchy",
+      "lessons": [
+       8
+      ]
+     }
+    },
+    {
+     "word": "anomalous",
+     "barronsMeaning": "abnormal; irregular"
+    },
+    {
+     "word": "antipathy",
+     "barronsMeaning": "aversion; dislike",
+     "alsoInWordSmart": {
+      "id": "antipathy",
+      "lessons": [
+       8
+      ]
+     }
+    },
+    {
+     "word": "apathy",
+     "barronsMeaning": "lack of caring; indifference",
+     "alsoInWordSmart": {
+      "id": "apathy",
+      "lessons": [
+       9
+      ]
+     }
+    },
+    {
+     "word": "appease",
+     "barronsMeaning": "pacify or soothe; relieve",
+     "alsoInWordSmart": {
+      "id": "appease",
+      "lessons": [
+       9
+      ]
+     }
+    },
+    {
+     "word": "apprise",
+     "barronsMeaning": "inform"
+    },
+    {
+     "word": "approbation",
+     "barronsMeaning": "approval",
+     "alsoInWordSmart": {
+      "id": "approbation",
+      "lessons": [
+       10
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "b333-a-3",
+   "letters": "A",
+   "part": 3,
+   "parts": 3,
+   "title": "A · Part 3",
+   "titleBn": "A · পর্ব ৩",
+   "words": [
+    {
+     "word": "appropriate",
+     "barronsMeaning": "acquire; take possession of for one’s own use",
+     "posHint": "verb",
+     "alsoInWordSmart": {
+      "id": "appropriate",
+      "lessons": [
+       10
+      ]
+     }
+    },
+    {
+     "word": "arduous",
+     "barronsMeaning": "hard; strenuous",
+     "alsoInWordSmart": {
+      "id": "arduous",
+      "lessons": [
+       11
+      ]
+     }
+    },
+    {
+     "word": "artless",
+     "barronsMeaning": "without guile; open and honest"
+    },
+    {
+     "word": "ascetic",
+     "barronsMeaning": "practicing self-denial; austere",
+     "alsoInWordSmart": {
+      "id": "ascetic",
+      "lessons": [
+       11
+      ]
+     }
+    },
+    {
+     "word": "assiduous",
+     "barronsMeaning": "diligent",
+     "alsoInWordSmart": {
+      "id": "assiduous",
+      "lessons": [
+       11
+      ]
+     }
+    },
+    {
+     "word": "assuage",
+     "barronsMeaning": "ease or lessen (pain); satisfy (hunger); soothe (anger)",
+     "posHint": "verb",
+     "alsoInWordSmart": {
+      "id": "assuage",
+      "lessons": [
+       12
+      ]
+     }
+    },
+    {
+     "word": "attenuate",
+     "barronsMeaning": "make thinner"
+    },
+    {
+     "word": "audacious",
+     "barronsMeaning": "daring; bold"
+    },
+    {
+     "word": "austere",
+     "barronsMeaning": "forbiddingly stern; severely simple and unornamented",
+     "alsoInWordSmart": {
+      "id": "austere",
+      "lessons": [
+       12
+      ]
+     }
+    },
+    {
+     "word": "autonomous",
+     "barronsMeaning": "self-governing; independent",
+     "alsoInWordSmart": {
+      "id": "autonomous",
+      "lessons": [
+       13
+      ]
+     }
+    },
+    {
+     "word": "aver",
+     "barronsMeaning": "assert confidently or declare; as used in law, state formally as a fact"
+    }
+   ]
+  },
+  {
+   "id": "b333-b",
+   "letters": "B",
+   "part": null,
+   "parts": 1,
+   "title": "B",
+   "titleBn": "B",
+   "words": [
+    {
+     "word": "banal",
+     "barronsMeaning": "hackneyed; commonplace; trite; lacking originality",
+     "alsoInWordSmart": {
+      "id": "banal",
+      "lessons": [
+       14
+      ]
+     }
+    },
+    {
+     "word": "belie",
+     "barronsMeaning": "contradict; give a false impression",
+     "alsoInWordSmart": {
+      "id": "belie",
+      "lessons": [
+       14
+      ]
+     }
+    },
+    {
+     "word": "beneficent",
+     "barronsMeaning": "kindly; doing good"
+    },
+    {
+     "word": "bolster",
+     "barronsMeaning": "support; reinforce"
+    },
+    {
+     "word": "bombastic",
+     "barronsMeaning": "pompous; using inflated language"
+    },
+    {
+     "word": "boorish",
+     "barronsMeaning": "rude; insensitive"
+    },
+    {
+     "word": "burgeon",
+     "barronsMeaning": "grow forth; send out buds",
+     "alsoInWordSmart": {
+      "id": "burgeon",
+      "lessons": [
+       17
+      ]
+     }
+    },
+    {
+     "word": "burnish",
+     "barronsMeaning": "make shiny by rubbing; polish"
+    },
+    {
+     "word": "buttress",
+     "barronsMeaning": "support; prop up",
+     "posHint": "verb"
+    }
+   ]
+  },
+  {
+   "id": "b333-c-1",
+   "letters": "C",
+   "part": 1,
+   "parts": 2,
+   "title": "C · Part 1",
+   "titleBn": "C · পর্ব ১",
+   "words": [
+    {
+     "word": "capricious",
+     "barronsMeaning": "unpredictable; fickle",
+     "alsoInWordSmart": {
+      "id": "capricious",
+      "lessons": [
+       18
+      ]
+     }
+    },
+    {
+     "word": "castigation",
+     "barronsMeaning": "punishment; severe criticism"
+    },
+    {
+     "word": "catalyst",
+     "barronsMeaning": "agent that increases the pace of a chemical action",
+     "alsoInWordSmart": {
+      "id": "catalyst",
+      "lessons": [
+       18
+      ]
+     }
+    },
+    {
+     "word": "caustic",
+     "barronsMeaning": "burning; sarcastically biting",
+     "alsoInWordSmart": {
+      "id": "caustic",
+      "lessons": [
+       19
+      ]
+     }
+    },
+    {
+     "word": "chicanery",
+     "barronsMeaning": "trickery; deception",
+     "alsoInWordSmart": {
+      "id": "chicanery",
+      "lessons": [
+       20
+      ]
+     }
+    },
+    {
+     "word": "coagulate",
+     "barronsMeaning": "thicken; congeal; clot"
+    },
+    {
+     "word": "coda",
+     "barronsMeaning": "concluding section of a musical or literary composition; summarizes or concludes"
+    },
+    {
+     "word": "cogent",
+     "barronsMeaning": "convincing",
+     "alsoInWordSmart": {
+      "id": "cogent",
+      "lessons": [
+       22
+      ]
+     }
+    },
+    {
+     "word": "commensurate",
+     "barronsMeaning": "corresponding in extent, degree, etc.; proportionate",
+     "posHint": "adjective",
+     "alsoInWordSmart": {
+      "id": "commensurate",
+      "lessons": [
+       22
+      ]
+     }
+    },
+    {
+     "word": "compendium",
+     "barronsMeaning": "brief, comprehensive summary",
+     "alsoInWordSmart": {
+      "id": "compendium",
+      "lessons": [
+       22
+      ]
+     }
+    },
+    {
+     "word": "complaisant",
+     "barronsMeaning": "trying to please; overly polite; obliging"
+    },
+    {
+     "word": "compliant",
+     "barronsMeaning": "yielding; conforming to requirements"
+    }
+   ]
+  },
+  {
+   "id": "b333-c-2",
+   "letters": "C",
+   "part": 2,
+   "parts": 2,
+   "title": "C · Part 2",
+   "titleBn": "C · পর্ব ২",
+   "words": [
+    {
+     "word": "conciliatory",
+     "barronsMeaning": "reconciling; soothing",
+     "alsoInWordSmart": {
+      "id": "conciliatory",
+      "lessons": [
+       23
+      ]
+     }
+    },
+    {
+     "word": "condone",
+     "barronsMeaning": "overlook; forgive; give tacit approval; excuse",
+     "alsoInWordSmart": {
+      "id": "condone",
+      "lessons": [
+       24
+      ]
+     }
+    },
+    {
+     "word": "confound",
+     "barronsMeaning": "confuse; puzzle"
+    },
+    {
+     "word": "connoisseur",
+     "barronsMeaning": "person competent to act as a judge of art; a lover of art",
+     "alsoInWordSmart": {
+      "id": "connoisseur",
+      "lessons": [
+       25
+      ]
+     }
+    },
+    {
+     "word": "contention",
+     "barronsMeaning": "claim; thesis"
+    },
+    {
+     "word": "contentious",
+     "barronsMeaning": "quarrelsome",
+     "alsoInWordSmart": {
+      "id": "contentious",
+      "lessons": [
+       26
+      ]
+     }
+    },
+    {
+     "word": "contrite",
+     "barronsMeaning": "penitent",
+     "alsoInWordSmart": {
+      "id": "contrite",
+      "lessons": [
+       26
+      ]
+     }
+    },
+    {
+     "word": "conundrum",
+     "barronsMeaning": "riddle; difficult problem"
+    },
+    {
+     "word": "converge",
+     "barronsMeaning": "approach; tend to meet; come together"
+    },
+    {
+     "word": "convoluted",
+     "barronsMeaning": "coiled around; involved; intricate"
+    },
+    {
+     "word": "craven",
+     "barronsMeaning": "cowardly"
+    }
+   ]
+  },
+  {
+   "id": "b333-d-1",
+   "letters": "D",
+   "part": 1,
+   "parts": 3,
+   "title": "D · Part 1",
+   "titleBn": "D · পর্ব ১",
+   "words": [
+    {
+     "word": "daunt",
+     "barronsMeaning": "intimidate; frighten",
+     "alsoInWordSmart": {
+      "id": "daunt",
+      "lessons": [
+       30
+      ]
+     }
+    },
+    {
+     "word": "decorum",
+     "barronsMeaning": "propriety; orderliness and good taste in manners"
+    },
+    {
+     "word": "default",
+     "barronsMeaning": "failure to act"
+    },
+    {
+     "word": "deference",
+     "barronsMeaning": "courteous regard for another’s wishes",
+     "alsoInWordSmart": {
+      "id": "deference",
+      "lessons": [
+       31
+      ]
+     }
+    },
+    {
+     "word": "delineate",
+     "barronsMeaning": "portray; depict; sketch",
+     "alsoInWordSmart": {
+      "id": "delineate",
+      "lessons": [
+       31
+      ]
+     }
+    },
+    {
+     "word": "denigrate",
+     "barronsMeaning": "blacken"
+    },
+    {
+     "word": "deride",
+     "barronsMeaning": "ridicule; make fun of",
+     "alsoInWordSmart": {
+      "id": "deride",
+      "lessons": [
+       31
+      ]
+     }
+    },
+    {
+     "word": "derivative",
+     "barronsMeaning": "unoriginal; obtained from another source"
+    },
+    {
+     "word": "desiccate",
+     "barronsMeaning": "dry up",
+     "alsoInWordSmart": {
+      "id": "desiccate",
+      "lessons": [
+       32
+      ]
+     }
+    },
+    {
+     "word": "desultory",
+     "barronsMeaning": "aimless; haphazard; digressing at random",
+     "alsoInWordSmart": {
+      "id": "desultory",
+      "lessons": [
+       32
+      ]
+     }
+    },
+    {
+     "word": "deterrent",
+     "barronsMeaning": "Something that discourages; hindrance"
+    },
+    {
+     "word": "diatribe",
+     "barronsMeaning": "bitter scolding; invective",
+     "posHint": "noun"
+    },
+    {
+     "word": "dichotomy",
+     "barronsMeaning": "split; branching into two parts (especially contradictory ones)"
+    },
+    {
+     "word": "diffidence",
+     "barronsMeaning": "Shyness"
+    }
+   ]
+  },
+  {
+   "id": "b333-d-2",
+   "letters": "D",
+   "part": 2,
+   "parts": 3,
+   "title": "D · Part 2",
+   "titleBn": "D · পর্ব ২",
+   "words": [
+    {
+     "word": "diffuse",
+     "barronsMeaning": "wordy, rambling, spread out (like a gas)",
+     "posHint": "adjective"
+    },
+    {
+     "word": "digression",
+     "barronsMeaning": "Wandering away from the subject"
+    },
+    {
+     "word": "dirge",
+     "barronsMeaning": "Lament with music"
+    },
+    {
+     "word": "disabuse",
+     "barronsMeaning": "correct a false impression; undeceive"
+    },
+    {
+     "word": "discerning",
+     "barronsMeaning": "mentally quick and observant; having insight"
+    },
+    {
+     "word": "discordant",
+     "barronsMeaning": "not harmonious; conflicting"
+    },
+    {
+     "word": "discredit",
+     "barronsMeaning": "defame; destroy confidence in; disbelieve"
+    },
+    {
+     "word": "discrepancy",
+     "barronsMeaning": "lack of consistency; difference"
+    },
+    {
+     "word": "discrete",
+     "barronsMeaning": "separate; unconnected; consisting of distinct parts",
+     "posHint": "adjective",
+     "alsoInWordSmart": {
+      "id": "discrete",
+      "lessons": [
+       33
+      ]
+     }
+    },
+    {
+     "word": "disingenuous",
+     "barronsMeaning": "lacking genuine candor; insincere"
+    },
+    {
+     "word": "disinterested",
+     "barronsMeaning": "unprejudiced",
+     "alsoInWordSmart": {
+      "id": "disinterested",
+      "lessons": [
+       33
+      ]
+     }
+    },
+    {
+     "word": "disjointed",
+     "barronsMeaning": "lacking coherence; separated at the joints"
+    },
+    {
+     "word": "dismiss",
+     "barronsMeaning": "eliminate from consideration; reject"
+    },
+    {
+     "word": "disparage",
+     "barronsMeaning": "belittle",
+     "alsoInWordSmart": {
+      "id": "disparage",
+      "lessons": [
+       33
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "b333-d-3",
+   "letters": "D",
+   "part": 3,
+   "parts": 3,
+   "title": "D · Part 3",
+   "titleBn": "D · পর্ব ৩",
+   "words": [
+    {
+     "word": "disparate",
+     "barronsMeaning": "basically different; unrelated",
+     "posHint": "adjective",
+     "alsoInWordSmart": {
+      "id": "disparate",
+      "lessons": [
+       34
+      ]
+     }
+    },
+    {
+     "word": "dissemble",
+     "barronsMeaning": "disguise; pretend",
+     "posHint": "verb"
+    },
+    {
+     "word": "disseminate",
+     "barronsMeaning": "distribute; spread; scatter (like seeds)",
+     "alsoInWordSmart": {
+      "id": "disseminate",
+      "lessons": [
+       34
+      ]
+     }
+    },
+    {
+     "word": "dissolution",
+     "barronsMeaning": "disintegration; looseness in morals",
+     "alsoInWordSmart": {
+      "id": "dissolution",
+      "lessons": [
+       34
+      ]
+     }
+    },
+    {
+     "word": "dissonance",
+     "barronsMeaning": "discord; opposite of harmony"
+    },
+    {
+     "word": "distend",
+     "barronsMeaning": "expand; swell out",
+     "alsoInWordSmart": {
+      "id": "distend",
+      "lessons": [
+       34
+      ]
+     }
+    },
+    {
+     "word": "distill",
+     "barronsMeaning": "purify; refine; concentrate"
+    },
+    {
+     "word": "diverge",
+     "barronsMeaning": "vary; go in different directions from the same point"
+    },
+    {
+     "word": "divest",
+     "barronsMeaning": "strip; deprive"
+    },
+    {
+     "word": "document",
+     "barronsMeaning": "provide written evidence"
+    },
+    {
+     "word": "dogmatic",
+     "barronsMeaning": "opinionated; arbitrary; doctrinal",
+     "alsoInWordSmart": {
+      "id": "dogmatic",
+      "lessons": [
+       34
+      ]
+     }
+    },
+    {
+     "word": "dormant",
+     "barronsMeaning": "sleeping; lethargic; latent",
+     "alsoInWordSmart": {
+      "id": "dormant",
+      "lessons": [
+       35
+      ]
+     }
+    },
+    {
+     "word": "dupe",
+     "barronsMeaning": "someone easily fooled"
+    }
+   ]
+  },
+  {
+   "id": "b333-e-1",
+   "letters": "E",
+   "part": 1,
+   "parts": 2,
+   "title": "E · Part 1",
+   "titleBn": "E · পর্ব ১",
+   "words": [
+    {
+     "word": "ebullient",
+     "barronsMeaning": "showing excitement; overflowing with enthusiasm",
+     "alsoInWordSmart": {
+      "id": "ebullient",
+      "lessons": [
+       36
+      ]
+     }
+    },
+    {
+     "word": "eclectic",
+     "barronsMeaning": "selective; composed of elements drawn from disparate sources",
+     "alsoInWordSmart": {
+      "id": "eclectic",
+      "lessons": [
+       36
+      ]
+     }
+    },
+    {
+     "word": "efficacy",
+     "barronsMeaning": "power to produce desired effect"
+    },
+    {
+     "word": "effrontery",
+     "barronsMeaning": "impudence; shameless boldness; sheer nerve; presumptuousness"
+    },
+    {
+     "word": "elegy",
+     "barronsMeaning": "poem or song expressing lamentation"
+    },
+    {
+     "word": "elicit",
+     "barronsMeaning": "draw out by discussion",
+     "alsoInWordSmart": {
+      "id": "elicit",
+      "lessons": [
+       37
+      ]
+     }
+    },
+    {
+     "word": "embellish",
+     "barronsMeaning": "adorn; ornament; enhance, as a story"
+    },
+    {
+     "word": "empirical",
+     "barronsMeaning": "based on experience",
+     "alsoInWordSmart": {
+      "id": "empirical",
+      "lessons": [
+       37
+      ]
+     }
+    },
+    {
+     "word": "emulate",
+     "barronsMeaning": "imitate; rival",
+     "alsoInWordSmart": {
+      "id": "emulate",
+      "lessons": [
+       38
+      ]
+     }
+    },
+    {
+     "word": "endemic",
+     "barronsMeaning": "prevailing among a specific group of people or in a specific area or country",
+     "alsoInWordSmart": {
+      "id": "endemic",
+      "lessons": [
+       38
+      ]
+     }
+    },
+    {
+     "word": "enervate",
+     "barronsMeaning": "weaken",
+     "alsoInWordSmart": {
+      "id": "enervate",
+      "lessons": [
+       38
+      ]
+     }
+    },
+    {
+     "word": "engender",
+     "barronsMeaning": "cause; produce",
+     "alsoInWordSmart": {
+      "id": "engender",
+      "lessons": [
+       38
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "b333-e-2",
+   "letters": "E",
+   "part": 2,
+   "parts": 2,
+   "title": "E · Part 2",
+   "titleBn": "E · পর্ব ২",
+   "words": [
+    {
+     "word": "enhance",
+     "barronsMeaning": "increase; improve"
+    },
+    {
+     "word": "ephemeral",
+     "barronsMeaning": "short-lived; fleeting",
+     "alsoInWordSmart": {
+      "id": "ephemeral",
+      "lessons": [
+       38
+      ]
+     }
+    },
+    {
+     "word": "equanimity",
+     "barronsMeaning": "calmness of temperament; composure",
+     "alsoInWordSmart": {
+      "id": "equanimity",
+      "lessons": [
+       39
+      ]
+     }
+    },
+    {
+     "word": "equivocate",
+     "barronsMeaning": "lie; mislead; attempt to conceal the truth",
+     "alsoInWordSmart": {
+      "id": "equivocate",
+      "lessons": [
+       39
+      ]
+     }
+    },
+    {
+     "word": "erudite",
+     "barronsMeaning": "learned; scholarly",
+     "alsoInWordSmart": {
+      "id": "erudite",
+      "lessons": [
+       39
+      ]
+     }
+    },
+    {
+     "word": "esoteric",
+     "barronsMeaning": "hard to understand; known only to the chosen few",
+     "alsoInWordSmart": {
+      "id": "esoteric",
+      "lessons": [
+       40
+      ]
+     }
+    },
+    {
+     "word": "eulogy",
+     "barronsMeaning": "expression of praise, often on the occasion of someone’s death"
+    },
+    {
+     "word": "euphemism",
+     "barronsMeaning": "mild expression in place of an unpleasant one",
+     "alsoInWordSmart": {
+      "id": "euphemism",
+      "lessons": [
+       40
+      ]
+     }
+    },
+    {
+     "word": "exacerbate",
+     "barronsMeaning": "worsen; embitter",
+     "alsoInWordSmart": {
+      "id": "exacerbate",
+      "lessons": [
+       40
+      ]
+     }
+    },
+    {
+     "word": "exculpate",
+     "barronsMeaning": "clear from blame",
+     "alsoInWordSmart": {
+      "id": "exculpate",
+      "lessons": [
+       29
+      ]
+     }
+    },
+    {
+     "word": "exigency",
+     "barronsMeaning": "urgent situation; pressing needs or demands; state of requiring immediate attention",
+     "alsoInWordSmart": {
+      "id": "exigency",
+      "lessons": [
+       41
+      ]
+     }
+    },
+    {
+     "word": "extrapolation",
+     "barronsMeaning": "projection; conjecture"
+    }
+   ]
+  },
+  {
+   "id": "b333-f",
+   "letters": "F",
+   "part": null,
+   "parts": 1,
+   "title": "F",
+   "titleBn": "F",
+   "words": [
+    {
+     "word": "facetious",
+     "barronsMeaning": "joking (often inappropriately); humorous",
+     "alsoInWordSmart": {
+      "id": "facetious",
+      "lessons": [
+       42
+      ]
+     }
+    },
+    {
+     "word": "facilitate",
+     "barronsMeaning": "help bring about; make less difficult"
+    },
+    {
+     "word": "fallacious",
+     "barronsMeaning": "false; misleading"
+    },
+    {
+     "word": "fatuous",
+     "barronsMeaning": "brainless; inane; foolish, yet smug",
+     "alsoInWordSmart": {
+      "id": "fatuous",
+      "lessons": [
+       42
+      ]
+     }
+    },
+    {
+     "word": "fawning",
+     "barronsMeaning": "trying to please by behaving obsequiously, flattering, or cringing"
+    },
+    {
+     "word": "felicitous",
+     "barronsMeaning": "apt; suitably expressed; well chosen"
+    },
+    {
+     "word": "fervor",
+     "barronsMeaning": "glowing ardor; intensity of feeling",
+     "alsoInWordSmart": {
+      "id": "fervor",
+      "lessons": [
+       43
+      ]
+     }
+    },
+    {
+     "word": "flag",
+     "barronsMeaning": "droop; grow feeble"
+    },
+    {
+     "word": "fledgling",
+     "barronsMeaning": "inexperienced"
+    },
+    {
+     "word": "flout",
+     "barronsMeaning": "reject; mock; show contempt for",
+     "alsoInWordSmart": {
+      "id": "flout",
+      "lessons": [
+       43
+      ]
+     }
+    },
+    {
+     "word": "foment",
+     "barronsMeaning": "stir up; instigate",
+     "alsoInWordSmart": {
+      "id": "foment",
+      "lessons": [
+       43
+      ]
+     }
+    },
+    {
+     "word": "forestall",
+     "barronsMeaning": "prevent by taking action in advance"
+    },
+    {
+     "word": "frugality",
+     "barronsMeaning": "thrift; economy"
+    },
+    {
+     "word": "futile",
+     "barronsMeaning": "useless; hopeless; ineffectual",
+     "alsoInWordSmart": {
+      "id": "futile",
+      "lessons": [
+       45
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "b333-gh",
+   "letters": "G–H",
+   "part": null,
+   "parts": 1,
+   "title": "G–H",
+   "titleBn": "G–H",
+   "words": [
+    {
+     "word": "gainsay",
+     "barronsMeaning": "deny"
+    },
+    {
+     "word": "garrulous",
+     "barronsMeaning": "loquacious; talkative; wordy",
+     "alsoInWordSmart": {
+      "id": "garrulous",
+      "lessons": [
+       45
+      ]
+     }
+    },
+    {
+     "word": "goad",
+     "barronsMeaning": "urge on"
+    },
+    {
+     "word": "gouge",
+     "barronsMeaning": "overcharge"
+    },
+    {
+     "word": "grandiloquent",
+     "barronsMeaning": "pompous; bombastic; using high-sounding language",
+     "alsoInWordSmart": {
+      "id": "grandiloquent",
+      "lessons": [
+       45
+      ]
+     }
+    },
+    {
+     "word": "gregarious",
+     "barronsMeaning": "sociable",
+     "alsoInWordSmart": {
+      "id": "gregarious",
+      "lessons": [
+       45
+      ]
+     }
+    },
+    {
+     "word": "guileless",
+     "barronsMeaning": "without deceit"
+    },
+    {
+     "word": "gullible",
+     "barronsMeaning": "easily deceived"
+    },
+    {
+     "word": "harangue",
+     "barronsMeaning": "long, passionate, and vehement speech"
+    },
+    {
+     "word": "homogeneous",
+     "barronsMeaning": "of the same kind",
+     "alsoInWordSmart": {
+      "id": "homogeneous",
+      "lessons": [
+       46
+      ]
+     }
+    },
+    {
+     "word": "hyperbole",
+     "barronsMeaning": "exaggeration; overstatement",
+     "alsoInWordSmart": {
+      "id": "hyperbole",
+      "lessons": [
+       46
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "b333-i-1",
+   "letters": "I",
+   "part": 1,
+   "parts": 3,
+   "title": "I · Part 1",
+   "titleBn": "I · পর্ব ১",
+   "words": [
+    {
+     "word": "iconoclastic",
+     "barronsMeaning": "attacking cherished traditions"
+    },
+    {
+     "word": "idolatry",
+     "barronsMeaning": "worship of idols; excessive admiration"
+    },
+    {
+     "word": "immutable",
+     "barronsMeaning": "unchangeable",
+     "alsoInWordSmart": {
+      "id": "immutable",
+      "lessons": [
+       47
+      ]
+     }
+    },
+    {
+     "word": "impair",
+     "barronsMeaning": "injure; hurt"
+    },
+    {
+     "word": "impassive",
+     "barronsMeaning": "without feeling; imperturbable; stoical"
+    },
+    {
+     "word": "impede",
+     "barronsMeaning": "hinder; block"
+    },
+    {
+     "word": "impermeable",
+     "barronsMeaning": "impervious; not permitting passage through its substance"
+    },
+    {
+     "word": "imperturbable",
+     "barronsMeaning": "calm; placid"
+    },
+    {
+     "word": "impervious",
+     "barronsMeaning": "impenetrable; incapable of being damaged or distressed",
+     "alsoInWordSmart": {
+      "id": "impervious",
+      "lessons": [
+       48
+      ]
+     }
+    },
+    {
+     "word": "implacable",
+     "barronsMeaning": "incapable of being pacified"
+    },
+    {
+     "word": "implicit",
+     "barronsMeaning": "understood but not stated",
+     "alsoInWordSmart": {
+      "id": "implicit",
+      "lessons": [
+       41
+      ]
+     }
+    },
+    {
+     "word": "implode",
+     "barronsMeaning": "burst inward"
+    }
+   ]
+  },
+  {
+   "id": "b333-i-2",
+   "letters": "I",
+   "part": 2,
+   "parts": 3,
+   "title": "I · Part 2",
+   "titleBn": "I · পর্ব ২",
+   "words": [
+    {
+     "word": "inadvertently",
+     "barronsMeaning": "unintentionally; by oversight; carelessly"
+    },
+    {
+     "word": "inchoate",
+     "barronsMeaning": "recently begun; rudimentary; elementary",
+     "posHint": "adjective"
+    },
+    {
+     "word": "incongruity",
+     "barronsMeaning": "lack of harmony; absurdity"
+    },
+    {
+     "word": "inconsequential",
+     "barronsMeaning": "insignificant; unimportant"
+    },
+    {
+     "word": "incorporate",
+     "barronsMeaning": "introduce something into a larger whole; combine; unite"
+    },
+    {
+     "word": "indeterminate",
+     "barronsMeaning": "uncertain; not clearly fixed; indefinite"
+    },
+    {
+     "word": "indigence",
+     "barronsMeaning": "poverty"
+    },
+    {
+     "word": "indolent",
+     "barronsMeaning": "Lazy",
+     "alsoInWordSmart": {
+      "id": "indolent",
+      "lessons": [
+       50
+      ]
+     }
+    },
+    {
+     "word": "inert",
+     "barronsMeaning": "inactive; lacking power to move",
+     "alsoInWordSmart": {
+      "id": "inert",
+      "lessons": [
+       50
+      ]
+     }
+    },
+    {
+     "word": "ingenuous",
+     "barronsMeaning": "naive and trusting; young; unsophisticated",
+     "alsoInWordSmart": {
+      "id": "ingenuous",
+      "lessons": [
+       51
+      ]
+     }
+    },
+    {
+     "word": "inherent",
+     "barronsMeaning": "firmly established by nature or habit",
+     "alsoInWordSmart": {
+      "id": "inherent",
+      "lessons": [
+       51
+      ]
+     }
+    },
+    {
+     "word": "innocuous",
+     "barronsMeaning": "Harmless",
+     "alsoInWordSmart": {
+      "id": "innocuous",
+      "lessons": [
+       51
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "b333-i-3",
+   "letters": "I",
+   "part": 3,
+   "parts": 3,
+   "title": "I · Part 3",
+   "titleBn": "I · পর্ব ৩",
+   "words": [
+    {
+     "word": "insensible",
+     "barronsMeaning": "unconscious; unresponsive"
+    },
+    {
+     "word": "insinuate",
+     "barronsMeaning": "hint; imply; creep in",
+     "alsoInWordSmart": {
+      "id": "insinuate",
+      "lessons": [
+       52
+      ]
+     }
+    },
+    {
+     "word": "insipid",
+     "barronsMeaning": "lacking in flavor; dull",
+     "alsoInWordSmart": {
+      "id": "insipid",
+      "lessons": [
+       52
+      ]
+     }
+    },
+    {
+     "word": "insularity",
+     "barronsMeaning": "narrow-mindedness; isolation"
+    },
+    {
+     "word": "intractable",
+     "barronsMeaning": "unruly; stubborn; unyielding",
+     "alsoInWordSmart": {
+      "id": "intractable",
+      "lessons": [
+       52
+      ]
+     }
+    },
+    {
+     "word": "intransigence",
+     "barronsMeaning": "refusal of any compromise; stubbornness",
+     "posHint": "noun"
+    },
+    {
+     "word": "inundate",
+     "barronsMeaning": "overwhelm; flood; submerge",
+     "alsoInWordSmart": {
+      "id": "inundate",
+      "lessons": [
+       53
+      ]
+     }
+    },
+    {
+     "word": "inured",
+     "barronsMeaning": "accustomed; hardened",
+     "posHint": "adjective"
+    },
+    {
+     "word": "invective",
+     "barronsMeaning": "abuse",
+     "posHint": "noun",
+     "alsoInWordSmart": {
+      "id": "invective",
+      "lessons": [
+       53
+      ]
+     }
+    },
+    {
+     "word": "irascible",
+     "barronsMeaning": "irritable; easily angered",
+     "alsoInWordSmart": {
+      "id": "irascible",
+      "lessons": [
+       53
+      ]
+     }
+    },
+    {
+     "word": "irresolute",
+     "barronsMeaning": "uncertain how to act; weak"
+    },
+    {
+     "word": "itinerary",
+     "barronsMeaning": "plan of a trip",
+     "alsoInWordSmart": {
+      "id": "itinerary",
+      "lessons": [
+       53
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "b333-l",
+   "letters": "L",
+   "part": null,
+   "parts": 1,
+   "title": "L",
+   "titleBn": "L",
+   "words": [
+    {
+     "word": "laconic",
+     "barronsMeaning": "brief and to the point",
+     "alsoInWordSmart": {
+      "id": "laconic",
+      "lessons": [
+       54
+      ]
+     }
+    },
+    {
+     "word": "lassitude",
+     "barronsMeaning": "languor; weariness"
+    },
+    {
+     "word": "latent",
+     "barronsMeaning": "potential but undeveloped; dormant; hidden",
+     "alsoInWordSmart": {
+      "id": "latent",
+      "lessons": [
+       54
+      ]
+     }
+    },
+    {
+     "word": "laud",
+     "barronsMeaning": "praise",
+     "posHint": "verb",
+     "alsoInWordSmart": {
+      "id": "laud",
+      "lessons": [
+       54
+      ]
+     }
+    },
+    {
+     "word": "lethargic",
+     "barronsMeaning": "drowsy; dull"
+    },
+    {
+     "word": "levee",
+     "barronsMeaning": "stone embankment to prevent flooding"
+    },
+    {
+     "word": "levity",
+     "barronsMeaning": "lack of seriousness or steadiness; frivolity",
+     "alsoInWordSmart": {
+      "id": "levity",
+      "lessons": [
+       54
+      ]
+     }
+    },
+    {
+     "word": "log",
+     "barronsMeaning": "record of a voyage or flight; record of day-to-day activities"
+    },
+    {
+     "word": "loquacious",
+     "barronsMeaning": "talkative",
+     "alsoInWordSmart": {
+      "id": "loquacious",
+      "lessons": [
+       55
+      ]
+     }
+    },
+    {
+     "word": "lucid",
+     "barronsMeaning": "easily understood; clear; intelligible",
+     "alsoInWordSmart": {
+      "id": "lucid",
+      "lessons": [
+       55
+      ]
+     }
+    },
+    {
+     "word": "luminous",
+     "barronsMeaning": "shining; issuing light",
+     "alsoInWordSmart": {
+      "id": "luminous",
+      "lessons": [
+       55
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "b333-m",
+   "letters": "M",
+   "part": null,
+   "parts": 1,
+   "title": "M",
+   "titleBn": "M",
+   "words": [
+    {
+     "word": "magnanimity",
+     "barronsMeaning": "Generosity"
+    },
+    {
+     "word": "malingerer",
+     "barronsMeaning": "one who feigns illness to escape duty"
+    },
+    {
+     "word": "malleable",
+     "barronsMeaning": "capable of being shaped by pounding; impressionable",
+     "alsoInWordSmart": {
+      "id": "malleable",
+      "lessons": [
+       56
+      ]
+     }
+    },
+    {
+     "word": "maverick",
+     "barronsMeaning": "rebel; nonconformist",
+     "alsoInWordSmart": {
+      "id": "maverick",
+      "lessons": [
+       57
+      ]
+     }
+    },
+    {
+     "word": "mendacious",
+     "barronsMeaning": "lying; habitually dishonest",
+     "alsoInWordSmart": {
+      "id": "mendacious",
+      "lessons": [
+       57
+      ]
+     }
+    },
+    {
+     "word": "metamorphosis",
+     "barronsMeaning": "change of form",
+     "alsoInWordSmart": {
+      "id": "metamorphosis",
+      "lessons": [
+       57
+      ]
+     }
+    },
+    {
+     "word": "meticulous",
+     "barronsMeaning": "excessively careful; painstaking; scrupulous"
+    },
+    {
+     "word": "misanthrope",
+     "barronsMeaning": "one who hates mankind"
+    },
+    {
+     "word": "mitigate",
+     "barronsMeaning": "appease; moderate",
+     "alsoInWordSmart": {
+      "id": "mitigate",
+      "lessons": [
+       58
+      ]
+     }
+    },
+    {
+     "word": "mollify",
+     "barronsMeaning": "soothe",
+     "alsoInWordSmart": {
+      "id": "mollify",
+      "lessons": [
+       58
+      ]
+     }
+    },
+    {
+     "word": "morose",
+     "barronsMeaning": "ill-humored; sullen; melancholy",
+     "alsoInWordSmart": {
+      "id": "morose",
+      "lessons": [
+       58
+      ]
+     }
+    },
+    {
+     "word": "mundane",
+     "barronsMeaning": "worldly as opposed to spiritual; everyday",
+     "alsoInWordSmart": {
+      "id": "mundane",
+      "lessons": [
+       58
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "b333-no",
+   "letters": "N–O",
+   "part": null,
+   "parts": 1,
+   "title": "N–O",
+   "titleBn": "N–O",
+   "words": [
+    {
+     "word": "negate",
+     "barronsMeaning": "cancel out; nullify; deny"
+    },
+    {
+     "word": "neophyte",
+     "barronsMeaning": "recent convert; beginner"
+    },
+    {
+     "word": "obdurate",
+     "barronsMeaning": "stubborn",
+     "posHint": "adjective",
+     "alsoInWordSmart": {
+      "id": "obdurate",
+      "lessons": [
+       60
+      ]
+     }
+    },
+    {
+     "word": "obsequious",
+     "barronsMeaning": "lavishly attentive; servile; sycophantic",
+     "alsoInWordSmart": {
+      "id": "obsequious",
+      "lessons": [
+       60
+      ]
+     }
+    },
+    {
+     "word": "obviate",
+     "barronsMeaning": "make unnecessary; get rid of"
+    },
+    {
+     "word": "occlude",
+     "barronsMeaning": "shut; close"
+    },
+    {
+     "word": "officious",
+     "barronsMeaning": "meddlesome; excessively pushy in offering one’s services",
+     "alsoInWordSmart": {
+      "id": "officious",
+      "lessons": [
+       60
+      ]
+     }
+    },
+    {
+     "word": "onerous",
+     "barronsMeaning": "burdensome",
+     "alsoInWordSmart": {
+      "id": "onerous",
+      "lessons": [
+       60
+      ]
+     }
+    },
+    {
+     "word": "opprobrium",
+     "barronsMeaning": "infamy; vilification"
+    },
+    {
+     "word": "oscillate",
+     "barronsMeaning": "vibrate; waver"
+    },
+    {
+     "word": "ostentatious",
+     "barronsMeaning": "showy; pretentious; trying to attract attention",
+     "alsoInWordSmart": {
+      "id": "ostentatious",
+      "lessons": [
+       60
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "b333-p-1",
+   "letters": "P",
+   "part": 1,
+   "parts": 3,
+   "title": "P · Part 1",
+   "titleBn": "P · পর্ব ১",
+   "words": [
+    {
+     "word": "paragon",
+     "barronsMeaning": "model of perfection"
+    },
+    {
+     "word": "partisan",
+     "barronsMeaning": "one-sided; prejudiced; committed to a party",
+     "alsoInWordSmart": {
+      "id": "partisan",
+      "lessons": [
+       61
+      ]
+     }
+    },
+    {
+     "word": "pathological",
+     "barronsMeaning": "pertaining to disease"
+    },
+    {
+     "word": "paucity",
+     "barronsMeaning": "Scarcity",
+     "alsoInWordSmart": {
+      "id": "paucity",
+      "lessons": [
+       62
+      ]
+     }
+    },
+    {
+     "word": "pedantic",
+     "barronsMeaning": "showing off learning; bookish",
+     "alsoInWordSmart": {
+      "id": "pedantic",
+      "lessons": [
+       62
+      ]
+     }
+    },
+    {
+     "word": "penchant",
+     "barronsMeaning": "strong inclination; liking",
+     "alsoInWordSmart": {
+      "id": "penchant",
+      "lessons": [
+       62
+      ]
+     }
+    },
+    {
+     "word": "penury",
+     "barronsMeaning": "severe poverty; stinginess"
+    },
+    {
+     "word": "perennial",
+     "barronsMeaning": "something long-lasting",
+     "alsoInWordSmart": {
+      "id": "perennial",
+      "lessons": [
+       63
+      ]
+     }
+    },
+    {
+     "word": "perfidious",
+     "barronsMeaning": "treacherous; disloyal"
+    },
+    {
+     "word": "perfunctory",
+     "barronsMeaning": "superficial; not thorough; lacking interest, care, or enthusiasm",
+     "alsoInWordSmart": {
+      "id": "perfunctory",
+      "lessons": [
+       63
+      ]
+     }
+    },
+    {
+     "word": "permeable",
+     "barronsMeaning": "penetrable; porous; allowing liquids or gas to pass through"
+    },
+    {
+     "word": "pervasive",
+     "barronsMeaning": "spread throughout"
+    },
+    {
+     "word": "phlegmatic",
+     "barronsMeaning": "calm; not easily disturbed"
+    }
+   ]
+  },
+  {
+   "id": "b333-p-2",
+   "letters": "P",
+   "part": 2,
+   "parts": 3,
+   "title": "P · Part 2",
+   "titleBn": "P · পর্ব ২",
+   "words": [
+    {
+     "word": "piety",
+     "barronsMeaning": "devoutness; reverence for God"
+    },
+    {
+     "word": "placate",
+     "barronsMeaning": "pacify; conciliate",
+     "alsoInWordSmart": {
+      "id": "placate",
+      "lessons": [
+       64
+      ]
+     }
+    },
+    {
+     "word": "plasticity",
+     "barronsMeaning": "ability to be molded"
+    },
+    {
+     "word": "platitude",
+     "barronsMeaning": "trite remark; commonplace statement",
+     "posHint": "noun",
+     "alsoInWordSmart": {
+      "id": "platitude",
+      "lessons": [
+       64
+      ]
+     }
+    },
+    {
+     "word": "plethora",
+     "barronsMeaning": "excess; overabundance",
+     "alsoInWordSmart": {
+      "id": "plethora",
+      "lessons": [
+       64
+      ]
+     }
+    },
+    {
+     "word": "plummet",
+     "barronsMeaning": "fall sharply"
+    },
+    {
+     "word": "porous",
+     "barronsMeaning": "full of pores; like a sieve"
+    },
+    {
+     "word": "pragmatic",
+     "barronsMeaning": "practical (as opposed to idealistic); concerned with the practical worth or impact of something",
+     "alsoInWordSmart": {
+      "id": "pragmatic",
+      "lessons": [
+       65
+      ]
+     }
+    },
+    {
+     "word": "preamble",
+     "barronsMeaning": "introductory statement"
+    },
+    {
+     "word": "precarious",
+     "barronsMeaning": "uncertain; risky"
+    },
+    {
+     "word": "precipitate",
+     "barronsMeaning": "rash, premature, hasty, sudden",
+     "posHint": "adjective",
+     "alsoInWordSmart": {
+      "id": "precipitate",
+      "lessons": [
+       65
+      ]
+     }
+    },
+    {
+     "word": "precursor",
+     "barronsMeaning": "forerunner",
+     "alsoInWordSmart": {
+      "id": "precursor",
+      "lessons": [
+       66
+      ]
+     }
+    },
+    {
+     "word": "presumptuous",
+     "barronsMeaning": "arrogant; taking liberties"
+    }
+   ]
+  },
+  {
+   "id": "b333-p-3",
+   "letters": "P",
+   "part": 3,
+   "parts": 3,
+   "title": "P · Part 3",
+   "titleBn": "P · পর্ব ৩",
+   "words": [
+    {
+     "word": "prevaricate",
+     "barronsMeaning": "lie"
+    },
+    {
+     "word": "pristine",
+     "barronsMeaning": "characteristic of earlier times; primitive; unspoiled",
+     "alsoInWordSmart": {
+      "id": "pristine",
+      "lessons": [
+       66
+      ]
+     }
+    },
+    {
+     "word": "probity",
+     "barronsMeaning": "uprightness; incorruptibility"
+    },
+    {
+     "word": "problematic",
+     "barronsMeaning": "doubtful; unsettled; questionable; perplexing"
+    },
+    {
+     "word": "prodigal",
+     "barronsMeaning": "wasteful; reckless with money",
+     "alsoInWordSmart": {
+      "id": "prodigal",
+      "lessons": [
+       66
+      ]
+     }
+    },
+    {
+     "word": "profound",
+     "barronsMeaning": "deep; not superficial; complete",
+     "alsoInWordSmart": {
+      "id": "profound",
+      "lessons": [
+       67
+      ]
+     }
+    },
+    {
+     "word": "prohibitive",
+     "barronsMeaning": "tending to prevent the purchase or use of something; inclined to prevent or forbid"
+    },
+    {
+     "word": "proliferate",
+     "barronsMeaning": "grow rapidly; spread; multiply",
+     "alsoInWordSmart": {
+      "id": "proliferate",
+      "lessons": [
+       67
+      ]
+     }
+    },
+    {
+     "word": "propensity",
+     "barronsMeaning": "natural inclination",
+     "alsoInWordSmart": {
+      "id": "propensity",
+      "lessons": [
+       68
+      ]
+     }
+    },
+    {
+     "word": "propitiate",
+     "barronsMeaning": "appease"
+    },
+    {
+     "word": "propriety",
+     "barronsMeaning": "fitness; correct conduct",
+     "alsoInWordSmart": {
+      "id": "propriety",
+      "lessons": [
+       68
+      ]
+     }
+    },
+    {
+     "word": "proscribe",
+     "barronsMeaning": "ostracize; banish; outlaw",
+     "alsoInWordSmart": {
+      "id": "proscribe",
+      "lessons": [
+       68
+      ]
+     }
+    },
+    {
+     "word": "pungent",
+     "barronsMeaning": "stinging; sharp in taste or smell; caustic"
+    }
+   ]
+  },
+  {
+   "id": "b333-qr-1",
+   "letters": "Q–R",
+   "part": 1,
+   "parts": 2,
+   "title": "Q–R · Part 1",
+   "titleBn": "Q–R · পর্ব ১",
+   "words": [
+    {
+     "word": "qualified",
+     "barronsMeaning": "limited; restricted"
+    },
+    {
+     "word": "quibble",
+     "barronsMeaning": "minor objection or complaint"
+    },
+    {
+     "word": "quiescent",
+     "barronsMeaning": "at rest; dormant; temporarily inactive"
+    },
+    {
+     "word": "rarefied",
+     "barronsMeaning": "made less dense (of a gas)"
+    },
+    {
+     "word": "recalcitrant",
+     "barronsMeaning": "obstinately stubborn; determined to resist authority; unruly",
+     "alsoInWordSmart": {
+      "id": "recalcitrant",
+      "lessons": [
+       71
+      ]
+     }
+    },
+    {
+     "word": "recant",
+     "barronsMeaning": "disclaim or disavow; retract a previous statement; openly confess error",
+     "alsoInWordSmart": {
+      "id": "recant",
+      "lessons": [
+       71
+      ]
+     }
+    },
+    {
+     "word": "recluse",
+     "barronsMeaning": "hermit; loner"
+    },
+    {
+     "word": "recondite",
+     "barronsMeaning": "abstruse; profound; secret",
+     "alsoInWordSmart": {
+      "id": "recondite",
+      "lessons": [
+       71
+      ]
+     }
+    },
+    {
+     "word": "refractory",
+     "barronsMeaning": "stubborn; unmanageable"
+    },
+    {
+     "word": "refute",
+     "barronsMeaning": "disprove",
+     "alsoInWordSmart": {
+      "id": "refute",
+      "lessons": [
+       72
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "b333-qr-2",
+   "letters": "Q–R",
+   "part": 2,
+   "parts": 2,
+   "title": "Q–R · Part 2",
+   "titleBn": "Q–R · পর্ব ২",
+   "words": [
+    {
+     "word": "relegate",
+     "barronsMeaning": "banish to an inferior position; delegate; assign",
+     "alsoInWordSmart": {
+      "id": "relegate",
+      "lessons": [
+       72
+      ]
+     }
+    },
+    {
+     "word": "reproach",
+     "barronsMeaning": "express disapproval or disappointment",
+     "alsoInWordSmart": {
+      "id": "reproach",
+      "lessons": [
+       73
+      ]
+     }
+    },
+    {
+     "word": "reprobate",
+     "barronsMeaning": "person hardened in sin; devoid of a sense of decency"
+    },
+    {
+     "word": "repudiate",
+     "barronsMeaning": "disown; disavow",
+     "alsoInWordSmart": {
+      "id": "repudiate",
+      "lessons": [
+       73
+      ]
+     }
+    },
+    {
+     "word": "rescind",
+     "barronsMeaning": "cancel"
+    },
+    {
+     "word": "resolution",
+     "barronsMeaning": "Determination"
+    },
+    {
+     "word": "resolve",
+     "barronsMeaning": "determination; firmness of purpose"
+    },
+    {
+     "word": "reticent",
+     "barronsMeaning": "reserved; uncommunicative; inclined to silence",
+     "alsoInWordSmart": {
+      "id": "reticent",
+      "lessons": [
+       74
+      ]
+     }
+    },
+    {
+     "word": "reverent",
+     "barronsMeaning": "respectful; worshipful"
+    }
+   ]
+  },
+  {
+   "id": "b333-s-1",
+   "letters": "S",
+   "part": 1,
+   "parts": 2,
+   "title": "S · Part 1",
+   "titleBn": "S · পর্ব ১",
+   "words": [
+    {
+     "word": "sage",
+     "barronsMeaning": "person celebrated for wisdom",
+     "alsoInWordSmart": {
+      "id": "sage",
+      "lessons": [
+       75
+      ]
+     }
+    },
+    {
+     "word": "salubrious",
+     "barronsMeaning": "healthful"
+    },
+    {
+     "word": "sanction",
+     "barronsMeaning": "approve; ratify"
+    },
+    {
+     "word": "satiate",
+     "barronsMeaning": "satisfy fully"
+    },
+    {
+     "word": "saturate",
+     "barronsMeaning": "soak thoroughly"
+    },
+    {
+     "word": "savor",
+     "barronsMeaning": "enjoy; have a distinctive flavor, smell, or quality"
+    },
+    {
+     "word": "secrete",
+     "barronsMeaning": "hide away or cache; produce and release a substance into an organism"
+    },
+    {
+     "word": "shard",
+     "barronsMeaning": "fragment, generally of pottery"
+    },
+    {
+     "word": "skeptic",
+     "barronsMeaning": "doubter; person who suspends judgment until having examined evidence supporting a point of view"
+    },
+    {
+     "word": "solicitous",
+     "barronsMeaning": "worried; concerned",
+     "alsoInWordSmart": {
+      "id": "solicitous",
+      "lessons": [
+       77
+      ]
+     }
+    },
+    {
+     "word": "soporific",
+     "barronsMeaning": "sleep-causing; marked by sleepiness",
+     "alsoInWordSmart": {
+      "id": "soporific",
+      "lessons": [
+       77
+      ]
+     }
+    },
+    {
+     "word": "specious",
+     "barronsMeaning": "seemingly reasonable but incorrect; misleading (often intentionally)",
+     "alsoInWordSmart": {
+      "id": "specious",
+      "lessons": [
+       78
+      ]
+     }
+    },
+    {
+     "word": "spectrum",
+     "barronsMeaning": "colored band produced when a beam of light passes through a prism"
+    }
+   ]
+  },
+  {
+   "id": "b333-s-2",
+   "letters": "S",
+   "part": 2,
+   "parts": 2,
+   "title": "S · Part 2",
+   "titleBn": "S · পর্ব ২",
+   "words": [
+    {
+     "word": "sporadic",
+     "barronsMeaning": "occurring irregularly",
+     "alsoInWordSmart": {
+      "id": "sporadic",
+      "lessons": [
+       78
+      ]
+     }
+    },
+    {
+     "word": "stigma",
+     "barronsMeaning": "token of disgrace; brand"
+    },
+    {
+     "word": "stint",
+     "barronsMeaning": "be thrifty; set limits",
+     "posHint": "verb"
+    },
+    {
+     "word": "stipulate",
+     "barronsMeaning": "make express conditions; specify",
+     "alsoInWordSmart": {
+      "id": "stipulate",
+      "lessons": [
+       78
+      ]
+     }
+    },
+    {
+     "word": "stolid",
+     "barronsMeaning": "dull; impassive"
+    },
+    {
+     "word": "striated",
+     "barronsMeaning": "marked with parallel bands; grooved"
+    },
+    {
+     "word": "strut",
+     "barronsMeaning": "pompous walk; supporting bar",
+     "note": "The PDF lists strut twice (pompous walk / supporting bar); merged into one entry with both senses."
+    },
+    {
+     "word": "subpoena",
+     "barronsMeaning": "writ summoning a witness to appear"
+    },
+    {
+     "word": "subside",
+     "barronsMeaning": "settle down; descend; grow quiet"
+    },
+    {
+     "word": "substantiate",
+     "barronsMeaning": "establish by evidence; verify; support"
+    },
+    {
+     "word": "supersede",
+     "barronsMeaning": "cause to be set aside; replace; make obsolete"
+    },
+    {
+     "word": "supposition",
+     "barronsMeaning": "hypothesis; surmise"
+    }
+   ]
+  },
+  {
+   "id": "b333-t",
+   "letters": "T",
+   "part": null,
+   "parts": 1,
+   "title": "T",
+   "titleBn": "T",
+   "words": [
+    {
+     "word": "tacit",
+     "barronsMeaning": "understood; not put into words",
+     "alsoInWordSmart": {
+      "id": "tacit",
+      "lessons": [
+       81
+      ]
+     }
+    },
+    {
+     "word": "tangential",
+     "barronsMeaning": "peripheral; only slightly connected; digressing",
+     "alsoInWordSmart": {
+      "id": "tangential",
+      "lessons": [
+       81
+      ]
+     }
+    },
+    {
+     "word": "tenuous",
+     "barronsMeaning": "thin; rare; slim",
+     "alsoInWordSmart": {
+      "id": "tenuous",
+      "lessons": [
+       82
+      ]
+     }
+    },
+    {
+     "word": "tirade",
+     "barronsMeaning": "extended scolding; denunciation; harangue",
+     "alsoInWordSmart": {
+      "id": "tirade",
+      "lessons": [
+       82
+      ]
+     }
+    },
+    {
+     "word": "torpor",
+     "barronsMeaning": "lethargy; sluggishness; dormancy",
+     "alsoInWordSmart": {
+      "id": "torpor",
+      "lessons": [
+       82
+      ]
+     }
+    },
+    {
+     "word": "tortuous",
+     "barronsMeaning": "winding; full of curves"
+    },
+    {
+     "word": "tractable",
+     "barronsMeaning": "docile; easily managed"
+    },
+    {
+     "word": "transgression",
+     "barronsMeaning": "violation of a law; sin"
+    },
+    {
+     "word": "truculence",
+     "barronsMeaning": "aggressiveness; ferocity"
+    }
+   ]
+  },
+  {
+   "id": "b333-vwz",
+   "letters": "V–W–Z",
+   "part": null,
+   "parts": 1,
+   "title": "V–W–Z",
+   "titleBn": "V–W–Z",
+   "words": [
+    {
+     "word": "vacillate",
+     "barronsMeaning": "waver; fluctuate",
+     "alsoInWordSmart": {
+      "id": "vacillate",
+      "lessons": [
+       84
+      ]
+     }
+    },
+    {
+     "word": "venerate",
+     "barronsMeaning": "revere",
+     "alsoInWordSmart": {
+      "id": "venerate",
+      "lessons": [
+       84
+      ]
+     }
+    },
+    {
+     "word": "veracious",
+     "barronsMeaning": "truthful"
+    },
+    {
+     "word": "verbose",
+     "barronsMeaning": "wordy",
+     "alsoInWordSmart": {
+      "id": "verbose",
+      "lessons": [
+       84
+      ]
+     }
+    },
+    {
+     "word": "viable",
+     "barronsMeaning": "practical or workable",
+     "alsoInWordSmart": {
+      "id": "viable",
+      "lessons": [
+       84
+      ]
+     }
+    },
+    {
+     "word": "viscous",
+     "barronsMeaning": "sticky, gluey"
+    },
+    {
+     "word": "vituperative",
+     "barronsMeaning": "adj abusive; scolding"
+    },
+    {
+     "word": "volatile",
+     "barronsMeaning": "changeable; explosive; evaporation rapidly",
+     "alsoInWordSmart": {
+      "id": "volatile",
+      "lessons": [
+       85
+      ]
+     }
+    },
+    {
+     "word": "warranted",
+     "barronsMeaning": "justified; authorized"
+    },
+    {
+     "word": "wary",
+     "barronsMeaning": "very cautious"
+    },
+    {
+     "word": "welter",
+     "barronsMeaning": "turmoil; bewildering jumble"
+    },
+    {
+     "word": "whimsical",
+     "barronsMeaning": "capricious; fanciful"
+    },
+    {
+     "word": "zealot",
+     "barronsMeaning": "fanatic; person who shows excessive zeal"
+    }
+   ]
+  }
+ ]
+}

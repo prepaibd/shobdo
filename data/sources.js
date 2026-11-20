@@ -1,4 +1,6 @@
-/* Books and word lists. status: "active" shows lessons; "soon" shows a Coming soon card. */
+/* Books and word lists. status: "active" shows lessons; "soon" shows a Coming soon card.
+   kind: "quickquiz" (default when missing) = lessons follow the book's Quick Quizzes;
+         "alphabetical" = the list is split into A–Z groups, lessons named by their own title. */
 VOCAB.addSource({
   id: "wordsmart",
   title: "Word Smart I & II",
@@ -7,6 +9,7 @@ VOCAB.addSource({
   desc: "Core vocabulary for SAT, GRE, IELTS and university admission tests.",
   descBn: "SAT, GRE, IELTS ও বিশ্ববিদ্যালয় ভর্তি পরীক্ষার জন্য গুরুত্বপূর্ণ শব্দ।",
   status: "active",
+  kind: "quickquiz",
   color: "#1f46c8"
 });
 
@@ -15,9 +18,10 @@ VOCAB.addSource({
   title: "Barron's 333",
   titleBn: "ব্যারন'স ৩৩৩",
   by: "Barron's",
-  desc: "333 high-frequency words that appear again and again in exams.",
-  descBn: "পরীক্ষায় বারবার আসা ৩৩৩টি গুরুত্বপূর্ণ শব্দ।",
-  status: "soon",
+  desc: "Barron's GRE high-frequency list: 332 words in 28 alphabetical groups.",
+  descBn: "Barron's-এর GRE high-frequency তালিকা: ২৮টি বর্ণানুক্রমিক গ্রুপে ৩৩২টি শব্দ।",
+  status: "active",
+  kind: "alphabetical",
   color: "#0b6e4f"
 });
 

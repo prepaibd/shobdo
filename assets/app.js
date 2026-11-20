@@ -23,7 +23,14 @@ const isDone = l => { const b = S.best(l.id, "quiz"); return l.match ? !!(b && b
 const isStarted = l => !!(S.best(l.id, "quiz") || S.best(l.id, "sentences") || S.answers(l.id, "quiz").some(Boolean));
 /* optional book cover: drop a file at assets/covers/<source id>.jpg; if it is missing the image removes itself */
 const cover = (s, cls) => `<img class="cover${cls ? " " + cls : ""}" src="assets/covers/${esc(s.id)}.jpg" alt="" loading="lazy" onerror="this.remove()">`;
-const lessonName = l => t("lessonN", l.order);
+/* source kind: "quickquiz" (Word Smart, the default) or "alphabetical" (Barron's 333) */
+const kindOf = srcId => (sourceById(srcId) || {}).kind || "quickquiz";
+const isAlpha = l => kindOf(l.source) === "alphabetical";
+const lessonName = l => isAlpha(l) ? (isBn() && l.titleBn ? l.titleBn : l.title) : t("lessonN", l.order);
+/* a word as shown inside one lesson: the lesson's own meaning (l.meanings) replaces the word's fields */
+const LW = (l, id) => { const w = W(id), o = l && l.meanings && l.meanings[id]; return o ? {...w, ...o} : w; };
+const lessonsFor = id => V.lessons.filter(l => l.words.includes(id));
+const srcLessonName = l => `${(sourceById(l.source) || {}).title || ""} · ${lessonName(l)}`;
 const lessonRange = l => `${W(l.words[0]).word} – ${W(l.words[l.words.length - 1]).word}`;
 const posText = w => isBn() && w.posBn ? `${w.pos} · ${w.posBn}` : (w.pos || "");
 
@@ -59,13 +66,14 @@ app.addEventListener("click", e => {
 });
 
 /* ---------- shared pieces ---------- */
-const wordCard = (w, i) => `<article class="w">${starBtn(w.id)}<h3>${i != null ? (i + 1) + ". " : ""}${esc(w.word)}<span>${esc(posText(w))}</span></h3>
+const alsoIn = (w, l) => { const o = lessonsFor(w.id).filter(x => x !== l); return o.length ? `<p class="also">${esc(t("alsoIn"))} ${o.map(x => `<a href="#lesson-${esc(x.id)}">${esc(srcLessonName(x))}</a>`).join(", ")}</p>` : ""; };
+const wordCard = (w, i, l) => `<article class="w">${starBtn(w.id)}<h3>${i != null ? (i + 1) + ". " : ""}${esc(w.word)}<span>${esc(posText(w))}</span></h3>
 <div class="def">${esc(w.def)}</div><div class="bnm">${esc(w.bn)}</div>
 ${w.full ? `<p>${esc(w.full)}</p>` : ""}${w.ex ? `<p class="ex">“${esc(w.ex)}”</p>` : ""}${w.exb ? `<p class="bn">${esc(w.exb)}</p>` : ""}
-${w.hook ? `<span class="tag">${esc(t("memoryTrick"))}</span><p class="bn">${esc(w.hook)}</p>` : ""}</article>`;
+${w.hook ? `<span class="tag">${esc(t("memoryTrick"))}</span><p class="bn">${esc(w.hook)}</p>` : ""}${l ? alsoIn(w, l) : ""}</article>`;
 
 /* Flashcard deck. mode "study" = next/back/shuffle; mode "review" = I know it / Still learning */
-function deck(ids, mode, kicker) {
+function deck(ids, mode, kicker, get = W) {
   const html = `<div class="flipzone">${kicker ? `<div class="kicker">${esc(kicker)}</div>` : ""}
 <button class="card" id="fcard" aria-label="Flashcard"><div class="inner">
 <div class="face front"><div class="big" id="fw"></div><div class="pos" id="fp"></div><div class="hint">${esc(t("tapFlip"))}</div></div>
@@ -80,7 +88,7 @@ ${mode === "review"
     const show = () => {
       if (!list.length) { onEmpty && onEmpty(); return; }
       i = (i + list.length) % list.length;
-      const w = W(list[i]);
+      const w = get(list[i]);
       $("fcard").classList.remove("on");
       $("fw").textContent = w.word; $("fp").textContent = posText(w);
       $("fd").textContent = w.def; $("fdb").textContent = w.bn; $("fe").textContent = w.ex || ""; $("feb").textContent = w.exb || "";
@@ -161,9 +169,10 @@ function pageHome() {
   const d = wod ? deck([wod.id], "study", t("wordOfDay")) : null;
   const srcCard = s => {
     const ls = lessonsOf(s.id), words = new Set(ls.flatMap(l => l.words)).size, dn = ls.filter(isDone).length;
-    const inner = `<span class="chip ${s.status === "active" ? "go" : ""}">${s.status === "active" ? esc(t("srcCount", ls.length, words)) : esc(t("soon"))}</span>
+    const g = kindOf(s.id) === "alphabetical";
+    const inner = `<span class="chip ${s.status === "active" ? "go" : ""}">${s.status === "active" ? esc(t(g ? "srcCountG" : "srcCount", ls.length, words)) : esc(t("soon"))}</span>
 <h3>${esc(s.title)}</h3>${s.by ? `<p class="by">${esc(s.by)}</p>` : ""}<p>${esc(isBn() && s.descBn ? s.descBn : s.desc)}</p>
-${s.status === "active" ? `<div class="bar" aria-hidden="true"><i style="width:${ls.length ? Math.round(dn / ls.length * 100) : 0}%"></i></div><p class="streak" style="text-align:left">${esc(t("srcDone", dn, ls.length))}</p>` : ""}`;
+${s.status === "active" ? `<div class="bar" aria-hidden="true"><i style="width:${ls.length ? Math.round(dn / ls.length * 100) : 0}%"></i></div><p class="streak" style="text-align:left">${esc(t(g ? "srcDoneG" : "srcDone", dn, ls.length))}</p>` : ""}`;
     return s.status === "active" ? `<a class="src" href="#src-${esc(s.id)}" style="--c:${esc(s.color)}">${cover(s)}<div class="sbody">${inner}</div></a>` : `<div class="src soon">${cover(s)}<div class="sbody">${inner}</div></div>`;
   };
   const steps = t("steps");
@@ -185,25 +194,37 @@ ${steps.map(([h, p]) => `<div><h3>${esc(h)}</h3><p>${esc(p)}</p></div>`).join(""
 function pageSource(id) {
   const s = sourceById(id);
   if (!s) return notFound();
-  const ls = lessonsOf(id);
+  const ls = lessonsOf(id), alpha = kindOf(id) === "alphabetical";
   const row = (l, i) => {
     const b = S.best(l.id, "quiz"), chip = isDone(l) ? `<span class="chip done">${esc(t("done"))}</span>` : isStarted(l) ? `<span class="chip go">${esc(t("inProgress"))}</span>` : `<span class="chip">${esc(t("notStarted"))}</span>`;
-    return `<a class="lrow nonum" href="#lesson-${esc(l.id)}"><span><h3>${esc(lessonName(l))}</h3><span class="bq">${esc(t("bookQuiz", String(l.order)))}</span><span class="ws">${l.words.slice(0, 5).map(w => esc(W(w).word)).join(", ")}${l.words.length > 5 ? "…" : ""} · ${esc(t("nWords", l.words.length))}</span></span>
+    return `<a class="lrow nonum" href="#lesson-${esc(l.id)}"><span><h3>${esc(lessonName(l))}</h3>${alpha ? "" : `<span class="bq">${esc(t("bookQuiz", String(l.order)))}</span>`}<span class="ws">${l.words.slice(0, 5).map(w => esc(W(w).word)).join(", ")}${l.words.length > 5 ? "…" : ""} · ${esc(t("nWords", l.words.length))}</span></span>
 <span class="sc">${chip}${b ? `<br>${esc(t("quizScore", b[0], b[1]))}` : ""}</span></a>`;
   };
   return {
     title: s.title,
     html: `<section class="band"><div class="wrap"><div class="crumb"><a href="#home">${esc(t("home"))}</a> › ${esc(s.title)}</div>
 <div class="shead">${cover(s, "lg")}<div><h1>${esc(s.title)}</h1><p class="lead">${esc(isBn() && s.descBn ? s.descBn : s.desc)}</p></div></div>
-${s.status === "active" && ls.length ? `<section class="about" aria-labelledby="abouth"><h2 id="abouth">${esc(t("aboutH"))}</h2>
+${s.status === "active" && ls.length && alpha ? `<section class="about" aria-labelledby="abouth"><h2 id="abouth">${esc(t("aboutAlphaH"))}</h2>
+<p class="ex">🔤 ${esc(t("aboutAlphaP1"))}</p><p class="ex">💻 ${esc(t("aboutAlphaP2"))}</p></section>
+` : ""}${s.status === "active" && ls.length && !alpha ? `<section class="about" aria-labelledby="abouth"><h2 id="abouth">${esc(t("aboutH"))}</h2>
 <div class="map"><div class="side"><span class="ico" aria-hidden="true">📖</span><b>${esc(t("aboutBook"))}</b><p>${esc(t("aboutBookP"))}</p></div>
 <span class="eqs" aria-hidden="true">=</span>
 <div class="side here"><span class="ico" aria-hidden="true">💻</span><b>${esc(t("aboutHere"))}</b><p>${esc(t("aboutHereP"))}</p></div></div>
 <p class="ex">${esc(t("aboutEx"))}</p></section>` : ""}
 ${s.status !== "active" ? `<div class="empty"><h3>${esc(t("soon"))}</h3></div>` :
- ls.length ? `<div class="lessons">${ls.map(row).join("")}</div>` : `<div class="empty"><h3>${esc(t("noLessons"))}</h3></div>`}
-</div></section>`
+ ls.length ? (alpha ? alphaList(ls, row) : `<div class="lessons">${ls.map(row).join("")}</div>`) : `<div class="empty"><h3>${esc(t("noLessons"))}</h3></div>`}
+</div></section>`,
+    after: alpha ? () => app.querySelectorAll("[data-jump]").forEach(b => b.addEventListener("click", () => $("letter-" + b.dataset.jump)?.scrollIntoView({behavior:"smooth", block:"start"}))) : null
   };
+}
+
+/* alphabetical sources: an A–Z jump bar, then a letter heading before each letter's groups.
+   The bar uses buttons, not #links, because # is the page router. */
+function alphaList(ls, row) {
+  const letters = [...new Set(ls.map(l => l.group))];
+  const slug = g => String(g).replace(/[^A-Za-z]/g, "");
+  return `<nav class="jump" aria-label="${esc(t("jumpLabel"))}">${letters.map(g => `<button type="button" data-jump="${esc(slug(g))}">${esc(g)}</button>`).join("")}</nav>
+${letters.map(g => `<h2 class="lhead" id="letter-${esc(slug(g))}">${esc(g)}</h2><div class="lessons">${ls.filter(l => l.group === g).map(row).join("")}</div>`).join("")}`;
 }
 
 function pageLesson(id, tab) {
@@ -223,10 +244,10 @@ function pageLesson(id, tab) {
     body = `${n ? `<details class="note" id="note"><summary><span class="ttl">💡 <b>The pattern:</b> ${esc(nTitle)}</span><span class="more" aria-hidden="true" data-more="${esc(t("showMore"))}" data-less="${esc(t("showLess"))}"></span></summary>
 <div class="nbody"><div><p class="bn" style="font-weight:600">${esc(n.titleBn)}</p><p>${esc(n.intro || "")}</p><p class="bn">${esc(n.introBn || "")}</p>${(n.points || []).map(([e, b]) => `<p>${esc(e)}</p><p class="bn">${esc(b)}</p>`).join("")}</div>
 <div class="eq">${(n.roots || []).map(r => `<div><b>${esc(r.parts)}</b> (${esc(r.gloss)}) → <b>${esc(r.word)}</b><span class="bn">${esc(r.bn)}</span></div>`).join("")}</div></div></details>` : ""}
-<div class="grid">${l.words.map((w, i) => wordCard(W(w), i)).join("")}</div>`;
+<div class="grid">${l.words.map((w, i) => wordCard(LW(l, w), i, l)).join("")}</div>`;
   }
   if (tab === "cards") {
-    const d = deck(l.words, "study");
+    const d = deck(l.words, "study", null, id => LW(l, id));
     body = `<p class="lead">${esc(t("cardsLead"))}</p>${d.html}`;
     after = () => d.bind();
   }
@@ -235,11 +256,13 @@ function pageLesson(id, tab) {
     const cnt = v => m.options[v][2] || 1, multi = keys.some(v => cnt(v) > 1);
     const optText = (v, on) => `${v}. ${m.options[v][0]}` + (cnt(v) > 1 ? ` (${cnt(v)})` : "") + (on ? ` (${m.options[v][1]})` : "");
     const opts = keys.map(v => `<option value="${esc(v)}">${esc(optText(v, false))}</option>`).join("");
-    const rows = m.items.map((it, i) => qRow(px, i, `<label for="${px}s${i}">${i + 1}. ${esc(W(it.word).word)}<span class="bn">${esc(W(it.word).bn)}</span></label>`, opts)).join("");
+    const rows = m.items.map((it, i) => qRow(px, i, `<label for="${px}s${i}">${i + 1}. ${esc(W(it.word).word)}<span class="bn">${esc(LW(l, it.word).bn)}</span></label>`, opts)).join("");
     const panel = `<details class="mpanel" id="${px}panel" open><summary>${esc(t("meanings"))} (${esc(keys[0])}–${esc(keys[keys.length - 1])})</summary><ol>${keys.map(v => `<li data-v="${esc(v)}"><b>${esc(v)}</b><span><span class="df">${esc(m.options[v][0])}</span>${cnt(v) > 1 ? ` <span class="n2">(${cnt(v)})</span>` : ""}<span class="bn">${esc(m.options[v][1])}</span></span><span class="ck"></span></li>`).join("")}</ol></details>`;
-    // the book's own instruction is always shown in English, as printed
+    // Word Smart: the book's own instruction, always in English as printed, under the book's quiz title.
+    // Alphabetical sources: the quiz is Shobdo's own, so heading and instruction are interface text.
+    const alpha = isAlpha(l);
     body = `<p class="lead">${esc(t("quizLead", multi))}</p>
-${sheetHTML(px, m.instruction, `<div class="qwrap"><div>${rows}</div>${panel}</div>`, false, l.title)}`;
+${sheetHTML(px, alpha ? t("quizInst") : m.instruction, `<div class="qwrap"><div>${rows}</div>${panel}</div>`, false, alpha ? t("quizH") : l.title)}`;
     after = () => exercise({
       px, keys: m.items.map(x => x.answer), saved: S.answers(l.id, "quiz"),
       text: optText, max: cnt,
@@ -263,10 +286,10 @@ ${sheetHTML(px, t("sentInst"), rows, true)}`;
     body = `<h3>${esc(t("tipsH"))}</h3>
 <ol class="steps">${t("tips").map(([h, p]) => `<li><b>${esc(h)}</b> ${esc(p)}</li>`).join("")}</ol>
 <h3 style="margin-top:28px">${esc(t("quickReview"))}</h3>
-<div class="rev">${l.words.map(w => `<div><b>${esc(W(w).word)}</b> = ${esc(W(w).def)} = <span class="bn">${esc(W(w).bn)}</span></div>`).join("")}</div>`;
+<div class="rev">${l.words.map(id => LW(l, id)).map(w => `<div><b>${esc(w.word)}</b> = ${esc(w.def)} = <span class="bn">${esc(w.bn)}</span></div>`).join("")}</div>`;
   }
 
-  const b = S.best(l.id, "quiz");
+  const b = S.best(l.id, "quiz"), al = isAlpha(l);
   return {
     title: `${lessonName(l)} · ${s.title}`,
     html: `<section class="band"><div class="wrap">
@@ -274,15 +297,19 @@ ${sheetHTML(px, t("sentInst"), rows, true)}`;
 <h1>${esc(lessonName(l))}</h1><p class="meta">${esc(lessonRange(l))} · ${esc(t("nWords", l.words.length))}${b ? ` · ${esc(t("best", b[0], b[1]))}` : ""}</p>
 <nav class="tabs" aria-label="${esc(t("tabsLabel"))}">${tabs.map((x, i) => `<a class="tab${x === tab ? " on" : ""}" href="#lesson-${esc(l.id)}-${x}"><span class="tn">${N(i + 1)}. </span>${esc(tabName(x))}</a>`).join("")}</nav>
 <div style="margin-top:8px">${body}</div>
-<div class="pager">${nextTab ? `<a class="btn pri" href="#lesson-${esc(l.id)}-${nextTab}">${esc(t("nextStep", tabName(nextTab)))}</a>` : next ? `<a class="btn pri" href="#lesson-${esc(next.id)}">${esc(t("nextLesson", lessonName(next)))}</a>` : `<a class="btn" href="#src-${esc(s.id)}">${esc(t("allLessons"))}</a>`}
-${prev ? `<a class="btn" href="#lesson-${esc(prev.id)}">${esc(t("prevLesson", lessonName(prev)))}</a>` : ""}</div>
+<div class="pager">${nextTab ? `<a class="btn pri" href="#lesson-${esc(l.id)}-${nextTab}">${esc(t("nextStep", tabName(nextTab)))}</a>` : next ? `<a class="btn pri" href="#lesson-${esc(next.id)}">${esc(t(al ? "nextGroup" : "nextLesson", lessonName(next)))}</a>` : `<a class="btn" href="#src-${esc(s.id)}">${esc(t(al ? "allGroups" : "allLessons"))}</a>`}
+${prev ? `<a class="btn" href="#lesson-${esc(prev.id)}">${esc(t(al ? "prevGroup" : "prevLesson", lessonName(prev)))}</a>` : ""}</div>
 </div></section>`,
     after
   };
 }
 
 function pageWords() {
-  const lessonsFor = id => V.lessons.filter(l => l.words.includes(id));
+  // each source's meaning of a word (a lesson's meanings override wins over the word's own def)
+  const srcDefs = w => { const m = new Map(); for (const l of lessonsFor(w.id)) if (!m.has(l.source)) m.set(l.source, LW(l, w.id).def); return m; };
+  const bySource = w => { const m = srcDefs(w); if (new Set(m.values()).size < 2) return "";
+    return `<div class="bysrc"><b>${esc(t("bySource"))}</b>${[...m].map(([sid, d]) => `<p><b>${esc((sourceById(sid) || {}).title || sid)}:</b> ${esc(d)}</p>`).join("")}</div>`; };
+  const lessonLink = (w, l) => new Set(lessonsFor(w.id).map(x => x.source)).size > 1 ? srcLessonName(l) : lessonName(l);
   const srcOpts = V.sources.filter(s => s.status === "active").map(s => `<option value="${esc(s.id)}">${esc(s.title)}</option>`).join("");
   return {
     title: `${t("wordsH")} · Shobdo`,
@@ -295,10 +322,10 @@ function pageWords() {
       const draw = () => {
         const norm = x => (x || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
         const q = norm($("q").value.trim()), src = $("src").value, st = $("onlyStar").checked;
-        const list = Object.values(V.words).filter(w => (!q || [w.word, w.def, w.bn].some(x => norm(x).includes(q))) && (!src || lessonsFor(w.id).some(l => l.source === src)) && (!st || S.inReview(w.id))).sort((a, b) => a.word.localeCompare(b.word));
+        const list = Object.values(V.words).filter(w => (!q || [w.word, w.def, w.bn, ...srcDefs(w).values()].some(x => norm(x).includes(q))) && (!src || lessonsFor(w.id).some(l => l.source === src)) && (!st || S.inReview(w.id))).sort((a, b) => a.word.localeCompare(b.word));
         $("wcount").textContent = t("nWords", list.length);
         $("wlist").innerHTML = list.length ? list.map(w => `<details><summary><b>${esc(w.word)}</b><span class="d">${esc(w.def)}</span><span class="bn">${esc(w.bn)}</span></summary>
-<div class="body">${wordCard(w)}<p class="streak" style="text-align:left">${esc(t("lessonsLbl"))} ${lessonsFor(w.id).map(l => `<a href="#lesson-${esc(l.id)}">${esc(lessonName(l))}</a>`).join(", ")}</p></div></details>`).join("")
+<div class="body">${wordCard(w)}${bySource(w)}<p class="streak" style="text-align:left">${esc(t("lessonsLbl"))} ${lessonsFor(w.id).map(l => `<a href="#lesson-${esc(l.id)}">${esc(lessonLink(w, l))}</a>`).join(", ")}</p></div></details>`).join("")
           : `<div class="empty"><h3>${esc(t("noWordsH"))}</h3><p>${esc(t("noWordsP"))}</p></div>`;
       };
       ["q", "src", "onlyStar"].forEach(id => $(id).addEventListener("input", draw));
