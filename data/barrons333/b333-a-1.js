@@ -54,17 +54,17 @@ VOCAB.addLesson({
     ]
   },
   sentences: [
-    {text:"We waited under the tin roof of the tea stall until the rain ___ .",answer:"abated",word:"abate",bn:"চা-দোকানের টিনের চালার নিচে আমরা বৃষ্টি কমে না আসা পর্যন্ত অপেক্ষা করলাম।"},
+    {text:"The roar of the crowd slowly ___ as the umpire raised his hand.",answer:"abated",word:"abate",bn:"আম্পায়ার হাত তুলতেই দর্শকদের গর্জন ধীরে ধীরে থেমে এল।"},
     {text:"The scientists threw out one ___ reading that was far from all the others.",answer:"aberrant",word:"aberrant",bn:"অন্য সব মাপ থেকে অনেক দূরে থাকা একটি অস্বাভাবিক রিডিং বিজ্ঞানীরা বাদ দিলেন।"},
     {text:"The plan to build a new bridge is in ___ until the government finds the money.",answer:"abeyance",word:"abeyance",bn:"সরকার টাকা জোগাড় না করা পর্যন্ত নতুন সেতু বানানোর পরিকল্পনাটি স্থগিত আছে।"},
     {text:"The cashier ___ with the shop's money and has not been seen since.",answer:"absconded",word:"abscond",bn:"ক্যাশিয়ার দোকানের টাকা নিয়ে গা ঢাকা দিয়েছে, তারপর থেকে তাকে আর দেখা যায়নি।"},
     {text:"My ___ uncle ate just one piece of hilsa while everyone else had three.",answer:"abstemious",word:"abstemious",bn:"সবাই যখন তিন টুকরো ইলিশ খেল, আমার মিতাহারী চাচা খেলেন মাত্র এক টুকরো।"},
     {text:"The librarian ___ the students for talking loudly in the reading room.",answer:"admonished",word:"admonish",bn:"পাঠকক্ষে জোরে কথা বলায় লাইব্রেরিয়ান শিক্ষার্থীদের সতর্ক করে দিলেন।"},
-    {text:"Some dishonest traders ___ turmeric powder with cheap coloured dust.",answer:"adulterate",word:"adulterate",bn:"কিছু অসৎ ব্যবসায়ী হলুদের গুঁড়ায় সস্তা রঙিন ধুলা মিশিয়ে ভেজাল করে।"},
+    {text:"The lab test showed that the shop had ___ its honey with sugar syrup.",answer:"adulterated",word:"adulterate",bn:"ল্যাব পরীক্ষায় দেখা গেল, দোকানটি মধুতে চিনির সিরাপ মিশিয়ে ভেজাল করেছে।"},
     {text:"The architect chose red brick for ___ reasons: it simply looks beautiful against the green trees.",answer:"aesthetic",word:"aesthetic",bn:"স্থপতি নান্দনিক কারণে লাল ইট বেছে নিলেন: সবুজ গাছের পাশে এটা দেখতে সুন্দর লাগে।"},
     {text:"The website ___ news from dozens of newspapers onto a single page.",answer:"aggregates",word:"aggregate",bn:"ওয়েবসাইটটি কয়েক ডজন পত্রিকার খবর একত্র করে এক পাতায় দেখায়।"},
     {text:"When the coach asked for volunteers to carry the kit, the boys agreed with ___ .",answer:"alacrity",word:"alacrity",bn:"কোচ কিট বয়ে নেওয়ার জন্য স্বেচ্ছাসেবক চাইলে ছেলেরা সাগ্রহে, সঙ্গে সঙ্গে রাজি হলো।"},
     {text:"Volunteers handed out dry food and clean water to ___ the suffering of the flood victims.",answer:"alleviate",word:"alleviate",bn:"বন্যাদুর্গতদের দুর্ভোগ লাঘব করতে স্বেচ্ছাসেবকেরা শুকনো খাবার আর বিশুদ্ধ পানি বিতরণ করলেন।"},
-    {text:"The two small cricket clubs decided to ___ and form one stronger club.",answer:"amalgamate",word:"amalgamate",bn:"ছোট দুটি ক্রিকেট ক্লাব একীভূত হয়ে একটি শক্তিশালী ক্লাব গড়ার সিদ্ধান্ত নিল।"}
+    {text:"Next year the village's two small schools will ___ into one larger school.",answer:"amalgamate",word:"amalgamate",bn:"আগামী বছর গ্রামের ছোট দুটি স্কুল একীভূত হয়ে একটি বড় স্কুল হবে।"}
   ]
 });
