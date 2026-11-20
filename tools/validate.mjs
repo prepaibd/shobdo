@@ -90,6 +90,7 @@ function checkRefs(where, text, strict) {
    (first clause when the meaning is long, or a distinguishing clause). A clause longer than
    60 characters may also be cut at a comma, keeping at least three words. */
 function fitsMeaning(def, meaning) {
+  meaning = meaning.replace(/^(adj|adv|v|n)\.?\s+/i, ""); // a stray part-of-speech marker in the list ("adj abusive; scolding")
   const d = norm(def), cl = meaning.split(";").map(norm).filter(Boolean);
   if (d === norm(meaning)) return true;
   for (let i = 0; i < cl.length; i++) for (let j = i + 1; j <= cl.length; j++) {
