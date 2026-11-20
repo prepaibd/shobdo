@@ -17,7 +17,7 @@ VOCAB.addLesson({
     admonish: {def:"warn; reprove"},
     adulterate: {def:"make impure by adding inferior or tainted substances"},
     aesthetic: {def:"artistic"},
-    aggregate: {def:"gather; accumulate",bn:"(ক্রিয়া) একত্র করা, জড়ো করা",ex:"The app aggregates bus timetables from every company into one list.",exb:"অ্যাপটি সব কোম্পানির বাসের সময়সূচি একত্র করে এক তালিকায় দেখায়।"},
+    aggregate: {def:"gather; accumulate",pos:"verb",posBn:"ক্রিয়া",bn:"একত্র করা, জড়ো করা",full:"As a verb (AG-ri-gayt): to collect many separate things into one group or total.",ex:"The app aggregates bus timetables from every company into one list.",exb:"অ্যাপটি সব কোম্পানির বাসের সময়সূচি একত্র করে এক তালিকায় দেখায়।"},
     alacrity: {def:"cheerful promptness; eagerness"},
     alleviate: {def:"relieve"}
   },

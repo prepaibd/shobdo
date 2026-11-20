@@ -17,12 +17,22 @@ Plain HTML, CSS and JavaScript. No build step, no server code. Open `index.html`
 | `assets/covers/` | Optional book cover images, see `assets/covers/README.txt`. |
 | `data/sources.js` | The books (Word Smart, Barron's 333, …). |
 | `data/wordsmart/quick-quiz-NN.js` | One file per lesson: its words, lesson note, quiz and sentences. |
+| `data/barrons333/<group-id>.js` | Barron's 333: one file per alphabetical group (ids from `docs/barrons333-groups.json`). |
+| `docs/barrons333-groups.json` | The Barron's list split into 28 groups: the single source of truth for Barron's words and meanings. |
+| `tools/validate.mjs` | Content checker (dev only, not loaded by the site): `node tools/validate.mjs` must print `NO ERRORS`. |
 
 ## Add a new lesson
 
 1. Copy an existing file, e.g. `data/wordsmart/quick-quiz-86.js`, to the next number.
 2. Fill in `VOCAB.addWords([...])` and `VOCAB.addLesson({...})`. Quiz answers must match the book's answer key; a meaning used twice gets a third value: `d: ["bitter", "তিক্ত", 2]`.
 3. Add a `<script src="data/wordsmart/quick-quiz-NN.js"></script>` line in `index.html`, after the previous lesson.
+
+## Add a Barron's 333 group
+
+1. Create `data/barrons333/<group-id>.js` with the group's words in the JSON's order, `source: "barrons333"`, `group` (e.g. `"A"`) and `title`/`titleBn` from the JSON.
+2. Call `VOCAB.addWords` **only for new words**. A word that is already in Word Smart is just listed in `words`, with a `meanings` override: `meanings: { abate: { def: "subside, or moderate" } }` (optional `bn`, `ex`, `exb`, `pos`, `posBn`, `full`). `addWords` overwrites an existing id, so never re-add one.
+3. Quiz definitions come from Barron's meaning (whole, or its first clause when long).
+4. Add the `<script>` line in `index.html` after the previous Barron's group and run `node tools/validate.mjs`.
 
 ## Add interface text
 

@@ -12,7 +12,7 @@ VOCAB.addLesson({
   words: ["appropriate","arduous","artless","ascetic","assiduous","assuage","attenuate","audacious","austere","autonomous","aver"],
   /* Barron's meanings for the words that are also in Word Smart */
   meanings: {
-    appropriate: {def:"acquire; take possession of for one’s own use"},
+    appropriate: {def:"acquire; take possession of for one’s own use",bn:"নিজের ব্যবহারের জন্য নিয়ে নেওয়া, দখল করা"},
     arduous: {def:"hard; strenuous"},
     ascetic: {def:"practicing self-denial"},
     assiduous: {def:"diligent"},

@@ -163,7 +163,7 @@ for (const l of V.lessons) {
   for (const [id, o] of Object.entries(l.meanings || {})) {
     if (!words.includes(id)) err(where, `meanings has "${id}", which is not in this lesson`);
     if (!filled(o.def)) err(where, `meanings.${id} is missing "def"`);
-    for (const f of Object.keys(o)) if (!["def", "bn", "ex", "exb"].includes(f)) err(where, `meanings.${id} has unknown field "${f}"`);
+    for (const f of Object.keys(o)) if (!["def", "bn", "ex", "exb", "pos", "posBn", "full"].includes(f)) err(where, `meanings.${id} has unknown field "${f}"`);
   }
   if (kindOf(l.source) === "alphabetical" && !filled(l.group)) err(where, `lesson is missing "group"`);
 }
