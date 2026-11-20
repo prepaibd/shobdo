@@ -37,6 +37,7 @@ const posText = w => isBn() && w.posBn ? `${w.pos} · ${w.posBn}` : (w.pos || ""
 let keyHandler = null;
 document.addEventListener("keydown", e => {
   if (["INPUT","SELECT","TEXTAREA"].includes(e.target.tagName)) return;
+  if (e.target.closest && e.target.closest("[data-say]")) return;       // Space/Enter on 🔊 speaks, it doesn't flip
   if (keyHandler) keyHandler(e);
 });
 
@@ -65,9 +66,43 @@ app.addEventListener("click", e => {
   updateBadge();
 });
 
+/* 🔊 buttons: speak the English word with the browser's own voice (Web Speech API). Only after a tap.
+   No speech support, or no English voice, → <html class="nospeech"> and CSS hides every .say button. */
+const synth = "speechSynthesis" in window ? window.speechSynthesis : null;
+let enVoice = null, speaking = null;
+const pickVoice = () => {
+  if (!synth) return;
+  const vs = synth.getVoices(), lg = v => (v.lang || "").replace("_", "-").toLowerCase();
+  enVoice = vs.find(v => lg(v).startsWith("en-us")) || vs.find(v => lg(v).startsWith("en")) || null;
+  // an empty list means the voices have not loaded yet: keep the buttons until we know
+  document.documentElement.classList.toggle("nospeech", vs.length > 0 && !enVoice);
+};
+if (synth) { pickVoice(); synth.addEventListener ? synth.addEventListener("voiceschanged", pickVoice) : (synth.onvoiceschanged = pickVoice); }
+else document.documentElement.classList.add("nospeech");
+function speak(text, btn) {
+  if (!synth || !text) return;
+  synth.cancel();                                                      // a new tap stops the last word
+  document.querySelectorAll(".say.on").forEach(b => b.classList.remove("on"));
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = "en-US"; u.rate = 0.9;
+  if (enVoice) u.voice = enVoice;
+  const off = () => btn && btn.classList.remove("on");
+  speaking = u;                                                        // a late "start" from a cancelled word must not light its button
+  u.onstart = () => { if (speaking === u && btn) btn.classList.add("on"); };
+  u.onend = off; u.onerror = off;
+  synth.speak(u);
+}
+const sayBtn = (word, extra = "") => `<button type="button" class="say" ${extra} data-say="${esc(word)}" aria-label="${esc(t("listen"))}" title="${esc(t("listen"))}">🔊</button>`;
+// capture phase, so the flashcard under the button never sees the tap and does not flip
+app.addEventListener("click", e => {
+  const b = e.target.closest("[data-say]"); if (!b) return;
+  e.preventDefault(); e.stopPropagation();
+  speak(b.dataset.say, b);
+}, true);
+
 /* ---------- shared pieces ---------- */
 const alsoIn = (w, l) => { const o = lessonsFor(w.id).filter(x => x !== l); return o.length ? `<p class="also">${esc(t("alsoIn"))} ${o.map(x => `<a href="#lesson-${esc(x.id)}">${esc(srcLessonName(x))}</a>`).join(", ")}</p>` : ""; };
-const wordCard = (w, i, l) => `<article class="w">${starBtn(w.id)}<h3>${i != null ? (i + 1) + ". " : ""}${esc(w.word)}<span>${esc(posText(w))}</span></h3>
+const wordCard = (w, i, l) => `<article class="w">${starBtn(w.id)}<h3>${i != null ? (i + 1) + ". " : ""}${esc(w.word)}${sayBtn(w.word)}<span>${esc(posText(w))}</span></h3>
 <div class="def">${esc(w.def)}</div><div class="bnm">${esc(w.bn)}</div>
 ${w.full ? `<p>${esc(w.full)}</p>` : ""}${w.ex ? `<p class="ex">“${esc(w.ex)}”</p>` : ""}${w.exb ? `<p class="bn">${esc(w.exb)}</p>` : ""}
 ${w.hook ? `<span class="tag">${esc(t("memoryTrick"))}</span><p class="bn">${esc(w.hook)}</p>` : ""}${l ? alsoIn(w, l) : ""}</article>`;
@@ -75,10 +110,10 @@ ${w.hook ? `<span class="tag">${esc(t("memoryTrick"))}</span><p class="bn">${esc
 /* Flashcard deck. mode "study" = next/back/shuffle; mode "review" = I know it / Still learning */
 function deck(ids, mode, kicker, get = W) {
   const html = `<div class="flipzone">${kicker ? `<div class="kicker">${esc(kicker)}</div>` : ""}
-<button class="card" id="fcard" aria-label="Flashcard"><div class="inner">
-<div class="face front"><div class="big" id="fw"></div><div class="pos" id="fp"></div><div class="hint">${esc(t("tapFlip"))}</div></div>
+<div class="card" id="fcard" role="button" tabindex="0" aria-label="Flashcard"><div class="inner">
+<div class="face front"><div class="big" id="fw"></div><div class="pos" id="fp"></div><div class="fsay">${sayBtn("", 'id="fsay"')}</div><div class="hint">${esc(t("tapFlip"))}</div></div>
 <div class="face back"><div class="d" id="fd"></div><div class="db" id="fdb"></div><div class="e" id="fe"></div><div class="eb bn" id="feb"></div></div>
-</div></button>
+</div></div>
 ${mode === "review"
   ? `<div class="row"><button id="fno">${esc(t("notYet"))}</button><span class="count" id="fc"></span><button class="good" id="fyes">${esc(t("know"))}</button></div><div class="streak" id="fs"></div>`
   : `<div class="row"><button id="fprev">${esc(t("prev"))}</button><span class="count" id="fc"></span><button id="fnext">${esc(t("next"))}</button><button id="fshuf">${esc(t("shuffle"))}</button></div><div class="row" id="fstar"></div>`}
@@ -90,13 +125,15 @@ ${mode === "review"
       i = (i + list.length) % list.length;
       const w = get(list[i]);
       $("fcard").classList.remove("on");
-      $("fw").textContent = w.word; $("fp").textContent = posText(w);
+      $("fw").textContent = w.word; $("fp").textContent = posText(w); $("fsay").dataset.say = w.word;
       $("fd").textContent = w.def; $("fdb").textContent = w.bn; $("fe").textContent = w.ex || ""; $("feb").textContent = w.exb || "";
       $("fc").textContent = `${N(i + 1)} / ${N(list.length)}`;
       if (mode === "review") $("fs").textContent = t("streak", S.streak(w.id), S.REVIEW_DONE);
       else $("fstar").innerHTML = `${starBtn(w.id, 'style="position:static"')}<span class="streak">${esc(t("starHint"))}</span>`;
     };
     $("fcard").addEventListener("click", () => $("fcard").classList.toggle("on"));
+    // the card is a div (so it can hold the 🔊 button): Enter flips it like a button; Space is the page key below
+    $("fcard").addEventListener("keydown", e => { if (e.key === "Enter" && e.target === $("fcard")) { e.preventDefault(); $("fcard").click(); } });
     if (mode === "review") {
       const mark = ok => { const id = list[i], still = S.reviewMark(id, ok); if (!still) list.splice(i, 1); else i++; updateBadge(); show(); };
       $("fyes").addEventListener("click", () => mark(true));
